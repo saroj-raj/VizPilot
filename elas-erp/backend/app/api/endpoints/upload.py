@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 from datetime import datetime
 from pathlib import Path
-from backend.app.services.dashboard_generator import generate_quick_viz
-from backend.app.services.file_parsers import parse_file, validate_dataframe
+from app.services.dashboard_generator import generate_quick_viz
+from app.services.file_parsers import parse_file, validate_dataframe
 
 router = APIRouter()
 
