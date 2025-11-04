@@ -37,8 +37,6 @@ backend/app/__pycache__/
 backend/app/services/__pycache__/
 backend/app/models/__pycache__/
 backend/app/**/*.log
-<<<<<<< Updated upstream
-=======
 elas-erp/backend/app/tmp/
 elas-erp/backend/app/tmp/uploads/
 elas-erp/app/tmp/
@@ -46,7 +44,6 @@ elas-erp/app/tmp/uploads/
 elas-erp/GROQ_DEBUG.log
 GROQ_DEBUG.log
 *.log
->>>>>>> Stashed changes
 
 # Test files created during development
 test_*.csv
@@ -83,8 +80,6 @@ data/
 *.duckdb
 *.sqlite
 *.sqlite3
-<<<<<<< Updated upstream
-=======
 
 # Dataset files (CSV, Excel, etc.)
 *.csv
@@ -133,7 +128,6 @@ reports/
 *.dylib
 *.so
 *.dll
->>>>>>> Stashed changes
 
 # Secrets & keys
 *.key

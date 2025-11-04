@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { API_BASE } from '@/app/lib/api';
 
 export default function UploadPage() {
   const router = useRouter();
@@ -85,7 +86,7 @@ export default function UploadPage() {
       formData.append('intent', intent);
 
       console.log('📤 Uploading files to API...');
-      const response = await fetch('http://localhost:8000/api/upload-simple', {
+      const response = await fetch(`${API_BASE}/api/upload-simple`, {
         method: 'POST',
         body: formData,
       });

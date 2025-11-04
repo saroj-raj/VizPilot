@@ -9,15 +9,23 @@ from backend.app.api.endpoints import auth
 
 app = FastAPI(title=settings.app_name)
 
+# CORS: Use ALLOWED_ORIGINS from environment
+allowed_origins = settings.allowed_origins.split(",") if settings.allowed_origins else ["*"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], allow_credentials=True,
-    allow_methods=["*"], allow_headers=["*"]
+    allow_origins=allowed_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
 )
 
 @app.get("/health")
 def health():
     return {"status": "ok", "service": "Elas ERP Backend", "version": "2.0"}
+
+@app.get("/version")
+def version():
+    return {"version": "2.0", "env": settings.app_env}
 
 # Include all routers
 app.include_router(auth.router, tags=["authentication"])  # PostgreSQL is now set up!

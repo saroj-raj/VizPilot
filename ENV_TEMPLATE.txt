@@ -1,0 +1,62 @@
+# Environment Variables Template
+# Fill this in as you complete deployment steps
+
+## Step 1: Generate SECRET_KEY
+# Run: python -c "import secrets; print(secrets.token_urlsafe(32))"
+SECRET_KEY=
+
+## Step 2: Neon Database (after creating project)
+DATABASE_URL=postgresql://user:pass@ep-xxxxx.neon.tech:5432/elas_erp
+
+## Step 3: Supabase Storage (after creating project + bucket)
+SUPABASE_URL=https://xxxxxxxxxxxxx.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.xxxxx
+SUPABASE_BUCKET=elas-uploads
+
+## Step 4: Groq API (you already have this)
+GROQ_API_KEY=gsk_
+
+## Step 5: After deploying to Vercel, add your Vercel URL here
+ALLOWED_ORIGINS=https://elas-erp-xxxxx.vercel.app,http://localhost:4000
+
+## Other required variables
+APP_ENV=production
+
+# ================================
+# Copy-Paste Guide
+# ================================
+
+# For Render (Backend) - Set these 8 variables:
+# 1. DATABASE_URL
+# 2. SUPABASE_URL
+# 3. SUPABASE_SERVICE_ROLE_KEY
+# 4. SUPABASE_BUCKET=elas-uploads
+# 5. GROQ_API_KEY
+# 6. SECRET_KEY
+# 7. ALLOWED_ORIGINS
+# 8. APP_ENV=production
+
+# For Vercel (Frontend) - Set this 1 variable:
+# NEXT_PUBLIC_API_BASE=https://elas-api.onrender.com
+
+# ================================
+# Quick Commands
+# ================================
+
+# Generate SECRET_KEY
+python -c "import secrets; print(secrets.token_urlsafe(32))"
+
+# Initialize database (after setting DATABASE_URL locally)
+cd elas-erp/backend
+python -m app.db.run_init
+
+# Check environment variables
+python check_env.py
+
+# Test backend health (after deployment)
+curl https://elas-api.onrender.com/health
+
+# Test CORS (after deployment)
+curl -i -X OPTIONS https://elas-api.onrender.com/api/upload \
+  -H "Origin: https://your-app.vercel.app" \
+  -H "Access-Control-Request-Method: POST"
