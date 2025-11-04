@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# ✅ FIX: import from backend.app...  (package-absolute)
-from backend.app.core.config import settings
-from backend.app.api.endpoints import upload, upload_simple, chat, business, documents, ai, dashboard, widgets, dashboards
+# Import using relative paths (since we run from backend dir)
+from app.core.config import settings
+from app.api.endpoints import upload, upload_simple, chat, business, documents, ai, dashboard, widgets, dashboards
 # Auth endpoints - PostgreSQL is now set up!
-from backend.app.api.endpoints import auth
+from app.api.endpoints import auth
 
 app = FastAPI(title=settings.app_name)
 
