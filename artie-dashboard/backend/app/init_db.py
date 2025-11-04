@@ -4,9 +4,9 @@ Database initialization script
 - Creates default admin user
 """
 from sqlalchemy.orm import Session
-from backend.app.database import engine, SessionLocal, Base
-from backend.app.models import User, Dashboard, Widget, BusinessInfo
-from backend.app.auth import get_password_hash
+from app.database import engine, SessionLocal, Base
+from app.models import User, Dashboard, Widget, BusinessInfo
+from app.auth import get_password_hash
 import sys
 
 

@@ -8,9 +8,9 @@ from typing import List, Optional, Any, Dict
 from datetime import datetime
 
 # Commented out until PostgreSQL is set up
-# from backend.app.database import get_db
-# from backend.app.models import Widget, Dashboard, User
-# from backend.app.api.endpoints.auth import get_current_active_user
+# from app.database import get_db
+# from app.models import Widget, Dashboard, User
+# from app.api.endpoints.auth import get_current_active_user
 
 router = APIRouter(prefix="/api/widgets", tags=["widgets"])
 

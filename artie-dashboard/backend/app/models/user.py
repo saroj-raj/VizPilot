@@ -4,7 +4,7 @@ User model for authentication and authorization
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from backend.app.database import Base
+from app.database import Base
 
 
 class User(Base):

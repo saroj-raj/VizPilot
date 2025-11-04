@@ -4,7 +4,7 @@ Dashboard model for storing user dashboard configurations
 from sqlalchemy import Column, Integer, String, Text, Boolean, DateTime, ForeignKey, JSON
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from backend.app.database import Base
+from app.database import Base
 
 
 class Dashboard(Base):

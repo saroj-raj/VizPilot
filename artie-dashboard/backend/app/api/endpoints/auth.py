@@ -8,9 +8,9 @@ from pydantic import BaseModel, EmailStr
 from typing import Optional
 from datetime import timedelta
 
-from backend.app.database import get_db
-from backend.app.models import User
-from backend.app.auth import (
+from app.database import get_db
+from app.models import User
+from app.auth import (
     verify_password,
     get_password_hash,
     create_access_token,

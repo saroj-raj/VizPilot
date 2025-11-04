@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from backend.app.services.llm_service import propose_widgets
+from app.services.llm_service import propose_widgets
 
 router = APIRouter()
 

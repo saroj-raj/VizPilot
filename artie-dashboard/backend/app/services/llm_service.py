@@ -5,7 +5,7 @@ import json, re
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from backend.app.core.config import settings
+from app.core.config import settings
 
 
 # Initialize Groq-backed chat LLM

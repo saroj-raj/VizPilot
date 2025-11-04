@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# ✅ FIX: import from backend.app...  (package-absolute)
-from backend.app.core.config import settings
-from backend.app.api.endpoints import upload, chat
+# Import using relative paths (since we run from backend dir)
+from app.core.config import settings
+from app.api.endpoints import upload, chat
 
 app = FastAPI(title=settings.app_name)
 

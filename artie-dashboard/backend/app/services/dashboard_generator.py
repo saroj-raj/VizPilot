@@ -2,7 +2,7 @@ from typing import List, Dict
 import duckdb
 import pandas as pd
 
-from backend.app.services.llm_service import propose_widgets
+from app.services.llm_service import propose_widgets
 
 
 def infer_hints_from_csv(csv_path: str, sample_rows: int = 200) -> Dict:

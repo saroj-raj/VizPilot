@@ -1,7 +1,7 @@
 import os, uuid, shutil
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 from fastapi.responses import JSONResponse
-from backend.app.services.dashboard_generator import generate_quick_viz
+from app.services.dashboard_generator import generate_quick_viz
 
 router = APIRouter()
 
