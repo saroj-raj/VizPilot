@@ -14,7 +14,8 @@
     "vega": "^5.30.0",
     "vega-lite": "^5.20.0",
     "@tanstack/react-query": "^5.51.9",
-    "axios": "^1.7.7"
+    "axios": "^1.7.7",
+    "recharts": "^2.10.0"
   },
   "devDependencies": {
     "typescript": "^5.5.4",
