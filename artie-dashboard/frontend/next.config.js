@@ -7,8 +7,10 @@ const nextConfig = {
     domains: ['*'],
     unoptimized: true
   },
-  // Standalone output for deployment  
-  output: 'standalone',
+  // Disable static optimization for pages that use auth
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
   // Force rebuild
   generateBuildId: async () => {
     return 'build-' + Date.now()
