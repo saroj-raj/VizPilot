@@ -11,7 +11,7 @@ import {
   Legend,
   Cell,
 } from 'recharts';
-import { chartTheme, getCategoryColor } from '../../utils/chartColors';
+import { chartTheme, getCategoryColor } from '../../app/utils/chartColors';
 
 interface BarChartCardProps {
   title: string;

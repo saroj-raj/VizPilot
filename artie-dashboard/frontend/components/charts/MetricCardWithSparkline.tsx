@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
-import { getGradientStyle } from '../../utils/chartColors';
+import { getGradientStyle } from '../../app/utils/chartColors';
 
 interface MetricCardProps {
   label: string;

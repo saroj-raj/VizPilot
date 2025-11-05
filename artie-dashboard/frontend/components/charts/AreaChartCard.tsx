@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from 'recharts';
-import { chartTheme } from '../../utils/chartColors';
+import { chartTheme } from '../../app/utils/chartColors';
 
 interface AreaChartCardProps {
   title: string;

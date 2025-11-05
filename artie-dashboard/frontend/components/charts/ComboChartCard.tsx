@@ -11,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { chartTheme } from '../../utils/chartColors';
+import { chartTheme } from '../../app/utils/chartColors';
 
 interface ComboChartCardProps {
   title: string;

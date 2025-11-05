@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
-import { getCategoryColor, chartTheme } from '../../utils/chartColors';
+import { getCategoryColor, chartTheme } from '../../app/utils/chartColors';
 
 interface DonutChartCardProps {
   title: string;
