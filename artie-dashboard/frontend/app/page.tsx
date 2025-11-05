@@ -1,3 +1,28 @@
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
-  return <main style={{ padding: 20 }}>Artie Frontend up.</main>;
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to login page
+    router.push('/login');
+  }, [router]);
+
+  return (
+    <main style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      height: '100vh',
+      fontFamily: 'system-ui'
+    }}>
+      <div style={{ textAlign: 'center' }}>
+        <h1>Elas ERP</h1>
+        <p>Redirecting to login...</p>
+      </div>
+    </main>
+  );
 }
