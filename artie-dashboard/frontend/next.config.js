@@ -7,8 +7,12 @@ const nextConfig = {
     domains: ['*'],
     unoptimized: true
   },
-  // Standalone output for deployment
-  output: 'standalone'
+  // Standalone output for deployment  
+  output: 'standalone',
+  // Force rebuild
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
+  }
 }
 
 module.exports = nextConfig
