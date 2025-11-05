@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+// Landing Page - Build: Nov 5, 2025 - Fix redirect issue
 export default function Home() {
   const [selectedRole, setSelectedRole] = useState('');
 
