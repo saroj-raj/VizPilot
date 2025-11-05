@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../app/contexts/AuthContext';
 
 export default function SignupPage() {
   const { signup, loading, error: authError } = useAuth();
