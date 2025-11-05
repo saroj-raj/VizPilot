@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd artie-dashboard/frontend && npm install && npm run build",
+  "outputDirectory": "artie-dashboard/frontend/.next",
+  "installCommand": "cd artie-dashboard/frontend && npm install",
+  "framework": null
+}
