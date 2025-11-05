@@ -1,18 +1,18 @@
-import { Providers } from './providers';
 import './globals.css';
+import { AuthProvider } from './contexts/AuthContext';
 
 export const metadata = {
-  title: 'Elas ERP',
-  description: 'Enterprise Resource Planning System',
+  title: 'Elas ERP - Enterprise Resource Planning',
+  description: 'Modern ERP solution for your business',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <Providers>
+      <body className="antialiased bg-gray-50">
+        <AuthProvider>
           {children}
-        </Providers>
+        </AuthProvider>
       </body>
     </html>
   );
