@@ -142,3 +142,33 @@ secrets.json
 *.node
 **/*.node
 **/@next/swc-*/
+
+# Development documentation (keep only README.md)
+*_PLAN.md
+*_STATUS.md
+*_SUMMARY.md
+*_GUIDE.md
+*_CHECKLIST.md
+*_COMPLETE.md
+*_FIX*.md
+*_DEPLOY*.md
+COMPARISON.md
+HOW_TO_PROCEED.md
+NEXT_STEPS*.md
+PROJECT_RULES*.md
+QUICK_DECISION*.md
+RENDER_SETUP.md
+TASKS_STATUS.md
+URGENT_*.md
+
+# Test and deployment scripts
+test_*.ps1
+deploy.ps1
+sync-*.ps1
+test_files/
+
+# Build artifacts and temp files
+.next/
+out/
+.vercel/
+.turbo/

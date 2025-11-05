@@ -1,8 +1,0 @@
-{
-  "buildCommand": "cd artie-dashboard/frontend && npm install && npm run build",
-  "outputDirectory": "artie-dashboard/frontend/.next",
-  "installCommand": "cd artie-dashboard/frontend && npm install",
-  "devCommand": "cd artie-dashboard/frontend && npm run dev",
-  "framework": "nextjs",
-  "rootDirectory": "artie-dashboard/frontend"
-}
