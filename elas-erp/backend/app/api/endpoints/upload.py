@@ -12,12 +12,11 @@ from app.services.file_parsers import parse_file, validate_dataframe
 
 router = APIRouter()
 
-# Create uploads directory using absolute path
-ROOT_DIR = Path(__file__).parent.parent.parent.parent  # Go up to project root
-UPLOAD_DIR = ROOT_DIR / "app" / "tmp" / "uploads"
-UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+UPLOAD_DIR = "app/tmp/uploads"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Log file in PROJECT ROOT
+ROOT_DIR = Path(__file__).parent.parent.parent.parent  # Go up to project root
 GROQ_LOG_FILE = ROOT_DIR / "GROQ_DEBUG.log"
 
 
@@ -64,7 +63,7 @@ async def upload_file(
     log_upload_info(f"📎 File type: {file_ext.upper()}")
     print(f"📎 File type: {file_ext.upper()}")
 
-    fpath = str(UPLOAD_DIR / f"{uuid.uuid4()}_{file.filename}")
+    fpath = os.path.join(UPLOAD_DIR, f"{uuid.uuid4()}_{file.filename}")
     with open(fpath, "wb") as out:
         shutil.copyfileobj(file.file, out)
     
@@ -105,64 +104,9 @@ async def upload_file(
     # Generate widget proposals
     log_upload_info("\n🤖 Calling generate_quick_viz...")
     print("\n🤖 Calling generate_quick_viz...")
-    
-    # Try AI generation with fallback to mock widgets
-    try:
-        widgets, groq_input, groq_response = generate_quick_viz(csv_path=fpath, domain=domain, intent=intent)
-        log_upload_info(f"✅ Generated {len(widgets)} widgets")
-        print(f"✅ Generated {len(widgets)} widgets")
-    except Exception as ai_error:
-        log_upload_info(f"⚠️ AI widget generation failed: {ai_error}")
-        print(f"⚠️ AI widget generation failed: {ai_error}")
-        print("📊 Using fallback mock widgets...")
-        
-        # Fallback: Create basic widgets based on columns
-        widgets = []
-        groq_input = {"domain": domain, "intent": intent, "columns": df_parsed.columns.tolist()}
-        groq_response = "AI unavailable - using fallback widgets"
-        
-        numeric_cols = df_parsed.select_dtypes(include=['number']).columns.tolist()
-        text_cols = df_parsed.select_dtypes(include=['object']).columns.tolist()
-        
-        # Create a summary table widget
-        widgets.append({
-            "type": "table",
-            "title": f"{domain} Data Summary",
-            "subtitle": f"Analysis for: {intent}",
-            "config": {
-                "columns": df_parsed.columns.tolist()[:5],  # First 5 columns
-                "pageSize": 10
-            }
-        })
-        
-        # If we have numeric columns, create a bar chart
-        if len(numeric_cols) >= 1:
-            widgets.append({
-                "type": "bar",
-                "title": f"{numeric_cols[0]} Overview",
-                "subtitle": f"Distribution of {numeric_cols[0]}",
-                "config": {
-                    "xField": text_cols[0] if text_cols else numeric_cols[0],
-                    "yField": numeric_cols[0],
-                    "limit": 10
-                }
-            })
-        
-        # If we have 2+ numeric columns, create a line chart
-        if len(numeric_cols) >= 2:
-            widgets.append({
-                "type": "line",
-                "title": f"{numeric_cols[0]} vs {numeric_cols[1]}",
-                "subtitle": "Trend comparison",
-                "config": {
-                    "xField": text_cols[0] if text_cols else numeric_cols[0],
-                    "yField": numeric_cols[1],
-                    "limit": 20
-                }
-            })
-        
-        log_upload_info(f"✅ Created {len(widgets)} fallback widgets")
-        print(f"✅ Created {len(widgets)} fallback widgets")
+    widgets, groq_input, groq_response = generate_quick_viz(csv_path=fpath, domain=domain, intent=intent)
+    log_upload_info(f"✅ Generated {len(widgets)} widgets")
+    print(f"✅ Generated {len(widgets)} widgets")
 
     # Return a small preview sample so the client can render Vega-Lite immediately
     preview_rows: List[Dict[str, Any]] = []
@@ -205,3 +149,4 @@ async def upload_file(
     print("="*80 + "\n")
     
     return JSONResponse(response_data)
+

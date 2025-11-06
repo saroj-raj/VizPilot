@@ -1,0 +1,40 @@
+services:
+  backend:
+    build: ./backend
+    container_name: elas-erp-backend
+    env_file:
+      - backend/.env
+    command: uvicorn backend.app.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - elas-erp-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    working_dir: /app
+    image: node:20
+    container_name: elas-erp-frontend
+    environment:
+      - NEXT_PUBLIC_API_BASE=http://localhost:8000
+    command: bash -lc "npm install && npm run dev"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+        - "4000:3000"
+    depends_on:
+      - backend
+    networks:
+      - elas-erp-network
+
+networks:
+  elas-erp-network:
+    driver: bridge

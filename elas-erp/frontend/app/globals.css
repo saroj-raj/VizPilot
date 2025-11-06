@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-green: #00C389;
+  --primary-green-hover: #00a877;
+  --slate: #1f2937;
+  --slate-hover: #111827;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --text-primary: #ffffff;
+  --text-secondary: #6b7280;
+  --offwhite: #f9fafb;
+}
+
+html, body {
+  height: 100%;
+}
