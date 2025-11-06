@@ -8,16 +8,18 @@ export function middleware(request: NextRequest) {
   // Define public paths that don't require authentication
   const isPublicPath = path === '/login' || path === '/signup' || path === '/'
 
-  // Get the token from cookies
-  const token = request.cookies.get('sb-access-token')?.value || ''
+  // Get Supabase auth tokens from cookies
+  const supabaseAuth = request.cookies.get('sb-nkohcnqkjjsjludqmkjz-auth-token')?.value || 
+                       request.cookies.get('supabase-auth-token')?.value ||
+                       ''
 
   // Redirect to login if accessing protected route without token
-  if (!isPublicPath && !token) {
+  if (!isPublicPath && !supabaseAuth) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
   // Redirect to dashboard if accessing login/signup with valid token
-  if (isPublicPath && token && path !== '/') {
+  if (isPublicPath && supabaseAuth && path !== '/') {
     return NextResponse.redirect(new URL('/dashboard/admin', request.url))
   }
 
