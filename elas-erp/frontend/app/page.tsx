@@ -32,7 +32,7 @@ export default function Home() {
               <Link href="/login" className="text-gray-600 hover:text-blue-600 transition">
                 Login
               </Link>
-              <Link href="/onboarding/business" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+              <Link href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
                 Get Started
               </Link>
             </nav>
@@ -171,7 +171,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center space-x-4">
             <Link
-              href="/onboarding/business"
+              href="/signup"
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
             >
               Start Free Trial

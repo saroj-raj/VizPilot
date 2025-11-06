@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
+import { useAuth } from '../../contexts/AuthContext';
 
 interface User {
   id: string;
@@ -26,8 +27,8 @@ const getCurrentRole = (pathname: string): 'admin' | 'manager' | 'employee' | 'f
 
 // Role configurations with actual business context
 const getRoleUser = (role: string, businessName?: string): User => {
-  const business = businessName || localStorage.getItem('businessName') || 'My Business';
-  const email = localStorage.getItem('userEmail') || 'user@example.com';
+  const business = businessName || (typeof window !== 'undefined' ? localStorage.getItem('businessName') : null) || 'My Business';
+  const email = (typeof window !== 'undefined' ? localStorage.getItem('userEmail') : null) || 'user@example.com';
   
   const roleConfigs = {
     admin: { name: 'Admin User', email },
@@ -64,6 +65,7 @@ const ROLE_ICONS = {
 export default function UserSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
+  const { signOut, user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   
   // Get current role from URL
@@ -121,9 +123,14 @@ export default function UserSwitcher() {
     console.log('🔄 Switched to:', user);
   };
 
-  const handleLogout = () => {
-    // In production, clear auth tokens and redirect
-    router.push('/login');
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      router.push('/login');
+    } catch (error) {
+      console.error('Logout error:', error);
+      router.push('/login');
+    }
   };
 
   return (

@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function LoginPage() {
   const router = useRouter();
+  const { signIn } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -17,15 +19,10 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      // For now, just redirect to the admin dashboard
-      // You can add actual authentication logic here later
-      if (email && password) {
-        router.push('/dashboard/admin');
-      } else {
-        setError('Please enter both email and password');
-      }
-    } catch (err) {
-      setError('Login failed. Please try again.');
+      await signIn(email, password);
+      router.push('/dashboard/admin');
+    } catch (err: any) {
+      setError(err.message || 'Login failed. Please check your credentials.');
     } finally {
       setLoading(false);
     }
@@ -113,28 +110,12 @@ export default function LoginPage() {
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
             </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">Or quick login as</span>
-            </div>
-          </div>
-
-          {/* Quick Login Buttons */}
-          <div className="grid grid-cols-2 gap-3">
-            {['admin', 'manager', 'employee', 'finance'].map((role) => (
-              <button
-                key={role}
-                onClick={() => quickLogin(role)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition capitalize"
-              >
-                {role}
-              </button>
-            ))}
           </div>
 
           {/* Sign Up Link */}
           <div className="mt-6 text-center text-sm text-gray-600">
             Don't have an account?{' '}
-            <Link href="/onboarding/business" className="text-blue-600 hover:text-blue-700 font-medium">
+            <Link href="/signup" className="text-blue-600 hover:text-blue-700 font-medium">
               Get Started
             </Link>
           </div>
