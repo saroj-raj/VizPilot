@@ -96,7 +96,8 @@ export default function DocumentsPage() {
       formData.append('domain', domain);
       formData.append('intent', intent);
 
-      const response = await fetch('http://localhost:8000/api/upload', {
+      const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+      const response = await fetch(`${apiBase}/api/upload`, {
         method: 'POST',
         body: formData,
       });
@@ -144,7 +145,8 @@ export default function DocumentsPage() {
       };
 
       console.log('💾 Saving dashboard:', dashboardData);
-      const response = await fetch('http://localhost:8000/api/dashboard/save', {
+      const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+      const response = await fetch(`${apiBase}/api/dashboard/save`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dashboardData),
