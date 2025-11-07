@@ -31,14 +31,14 @@ export default function LoginPage() {
         return;
       }
       
-      // Success - Wait a bit for cookies to be set, then redirect
-      console.log('Redirecting to dashboard...');
+      // Success - Wait a bit for cookies to be set, then redirect to onboarding/upload
+      console.log('Redirecting to onboarding...');
       
       // Small delay to ensure cookies are set
       await new Promise(resolve => setTimeout(resolve, 100));
       
-      // Force a full page navigation instead of client-side routing
-      window.location.href = '/dashboard/admin';
+      // Force a full page navigation to onboarding/upload page
+      window.location.href = '/onboarding/upload';
     } catch (err: any) {
       console.error('Login exception:', err);
       setError(err.message || 'Login failed. Please check your credentials.');

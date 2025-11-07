@@ -85,7 +85,8 @@ export default function UploadPage() {
       formData.append('intent', intent);
 
       console.log('📤 Uploading files to API...');
-      const response = await fetch('http://localhost:8000/api/upload', {
+      const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+      const response = await fetch(`${apiBase}/api/upload`, {
         method: 'POST',
         body: formData,
       });
@@ -120,9 +121,10 @@ export default function UploadPage() {
       
       if (err instanceof Error) {
         const errMsg = err.message.toLowerCase();
+        const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
         
         if (errMsg.includes('networkerror') || errMsg.includes('failed to fetch')) {
-          errorMessage += 'Cannot reach the server. Please check if the backend is running on port 8000.';
+          errorMessage += `Cannot reach the server at ${apiBase}. Please check your connection.`;
         } else if (errMsg.includes('unsupported file type')) {
           errorMessage += 'One or more files have an unsupported format. Please use CSV, Excel, PDF, or Word files.';
         } else if (errMsg.includes('parse') || errMsg.includes('parsing')) {
