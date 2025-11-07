@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-push checks..."
+set -e
+
+# Backend unit tests (mock mode)
+echo "  📦 Backend tests..."
+export APP_ENV=test
+export GROQ_MODE=mock
+export AUTH_MODE=mock
+
+cd backend || exit 1
+python -m pip install -U pip > /dev/null 2>&1 || true
+pip install -r requirements.txt > /dev/null 2>&1 || true
+pip install pytest > /dev/null 2>&1 || true
+pytest -q || { echo "❌ Backend tests failed"; exit 1; }
+
+# Frontend e2e (against mock backend)
+echo "  🎭 Frontend E2E tests..."
+cd ../frontend || exit 1
+npm ci --silent || true
+npx playwright install --with-deps > /dev/null 2>&1 || true
+npm run test:e2e:ci || { echo "❌ Frontend E2E failed"; exit 1; }
+
+echo "✅ All checks passed! Pushing..."

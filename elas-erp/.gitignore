@@ -39,4 +39,9 @@ Thumbs.db
 
 # Test outputs
 test-results/
+playwright-report/
+test.db
+test.db-journal
 coverage/
+.pytest_cache/
+*.pytest_cache

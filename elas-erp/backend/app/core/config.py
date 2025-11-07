@@ -16,6 +16,10 @@ class Settings(BaseSettings):
     # LLM
     groq_api_key: str = Field(default="", alias="GROQ_API_KEY")
     groq_model: str = Field(default="llama-3.3-70b-versatile", alias="GROQ_MODEL")  # Updated: llama-3.1 was decommissioned
+    groq_mode: str = Field(default="live", alias="GROQ_MODE")  # "live" or "mock" for testing
+
+    # Auth
+    auth_mode: str = Field(default="live", alias="AUTH_MODE")  # "live" or "mock" for testing
 
     # Storage
     aws_region: str = Field(default="us-east-1", alias="AWS_REGION")

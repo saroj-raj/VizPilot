@@ -16,6 +16,15 @@ app.add_middleware(
 def health():
     return {"status": "ok", "service": "Elas ERP Backend", "version": "2.0"}
 
+@app.get("/version")
+def version():
+    """Return app version and environment info"""
+    return {
+        "version": "2.0.0",
+        "app_name": settings.app_name,
+        "environment": settings.app_env
+    }
+
 # Include all routers
 app.include_router(auth.router, tags=["auth"])  # No prefix - router has /api/auth
 app.include_router(upload.router, prefix="/api", tags=["upload"])
