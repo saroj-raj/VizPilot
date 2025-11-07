@@ -77,8 +77,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
-    return { error }
+    try {
+      console.log('AuthContext: Attempting to sign in with Supabase...');
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      console.log('AuthContext: Supabase response:', { 
+        hasData: !!data, 
+        hasUser: !!data?.user,
+        hasSession: !!data?.session,
+        error: error?.message 
+      });
+      
+      if (error) {
+        console.error('AuthContext: Sign in error:', error);
+      } else {
+        console.log('AuthContext: Sign in successful, user:', data.user?.email);
+      }
+      
+      return { error };
+    } catch (err: any) {
+      console.error('AuthContext: Sign in exception:', err);
+      return { error: { message: err.message || 'An unexpected error occurred' } };
+    }
   }
 
   const signOut = async () => {

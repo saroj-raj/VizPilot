@@ -19,17 +19,23 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
+      console.log('Starting login with email:', email);
       const { error } = await signIn(email, password);
       
+      console.log('Login result:', error ? 'Error: ' + error.message : 'Success');
+      
       if (error) {
+        console.error('Login error details:', error);
         setError(error.message || 'Login failed. Please check your credentials.');
         setLoading(false);
         return;
       }
       
       // Success - redirect to dashboard
+      console.log('Redirecting to dashboard...');
       router.push('/dashboard/admin');
     } catch (err: any) {
+      console.error('Login exception:', err);
       setError(err.message || 'Login failed. Please check your credentials.');
       setLoading(false);
     }
