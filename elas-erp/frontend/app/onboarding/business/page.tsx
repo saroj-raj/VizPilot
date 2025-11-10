@@ -1,11 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import CountrySelect from '../../components/CountrySelect';
 
 export default function BusinessPage() {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
     businessName: '',
     industry: '',
@@ -24,11 +25,68 @@ export default function BusinessPage() {
     '201-500 employees', '500+ employees'
   ];
 
+  // Load existing data on mount
+  useEffect(() => {
+    const loadExistingData = async () => {
+      try {
+        // First try to load from localStorage
+        const saved = localStorage.getItem('businessInfo');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          setFormData(parsed);
+        }
+
+        // Then try to fetch from backend
+        const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+        const response = await fetch(`${apiBase}/api/business/me/info`);
+        if (response.ok) {
+          const data = await response.json();
+          if (data && data.businessInfo) {
+            setFormData(data.businessInfo);
+            localStorage.setItem('businessInfo', JSON.stringify(data.businessInfo));
+          }
+        }
+      } catch (error) {
+        console.error('Error loading existing data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadExistingData();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Save to localStorage or send to API
-    localStorage.setItem('businessInfo', JSON.stringify(formData));
-    router.push('/onboarding/team');
+    
+    try {
+      // Save to localStorage
+      localStorage.setItem('businessInfo', JSON.stringify(formData));
+      localStorage.setItem('businessName', formData.businessName);
+      
+      // Save to backend
+      const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+      const response = await fetch(`${apiBase}/api/business/setup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          businessInfo: formData,
+          teamMembers: [],
+          uploadedFiles: [],
+          useHistoricalData: false,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error('Failed to save to backend, but continuing...');
+      }
+      
+      router.push('/onboarding/team');
+    } catch (error) {
+      console.error('Error saving business info:', error);
+      // Continue anyway - don't block user flow
+      router.push('/onboarding/team');
+    }
   };
 
   return (
@@ -62,11 +120,18 @@ export default function BusinessPage() {
         {/* Main Form */}
         <div className="bg-white rounded-xl shadow-lg p-8">
           <div className="mb-6">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Tell us about your business</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              {loading ? 'Loading...' : formData.businessName ? 'Update your business information' : 'Tell us about your business'}
+            </h2>
             <p className="text-gray-600">This information helps us customize your ERP experience</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          {loading ? (
+            <div className="flex items-center justify-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
             {/* Business Name */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -160,6 +225,7 @@ export default function BusinessPage() {
               </button>
             </div>
           </form>
+          )}
         </div>
 
         {/* AI Assistant Hint */}

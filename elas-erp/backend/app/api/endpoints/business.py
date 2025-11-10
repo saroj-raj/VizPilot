@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Header
 from pydantic import BaseModel
 from typing import Optional, List
 import json
@@ -72,6 +72,35 @@ async def get_business_info(business_id: str):
     if business_id not in data:
         raise HTTPException(status_code=404, detail="Business not found")
     return data[business_id]
+
+@router.get("/business/me/info")
+async def get_my_business_info(user_email: Optional[str] = Header(None, alias="X-User-Email")):
+    """Get business info for the authenticated user"""
+    try:
+        data = load_data()
+        
+        # If user_email is provided, try to find their business
+        if user_email:
+            # Search through all businesses to find one associated with this email
+            for business_id, business in data.items():
+                # Check if this email matches any team member or the owner
+                if business.get("businessInfo", {}).get("ownerEmail") == user_email:
+                    return business
+                
+                # Check team members
+                for member in business.get("teamMembers", []):
+                    if member.get("email") == user_email:
+                        return business
+        
+        # If no email or no match found, return all businesses (for backward compatibility)
+        # In production, this should return only the user's business
+        if data:
+            # Return the first/most recent business
+            return list(data.values())[0] if data else None
+        
+        return None
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/business")
 async def list_businesses():

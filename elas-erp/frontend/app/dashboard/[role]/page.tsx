@@ -1,5 +1,6 @@
 'use client';
-import { use, useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import UserSwitcher from '@/app/components/UserSwitcher';
 import { ROLE_CONFIGS, filterWidgetsByRole, filterDataByRole, type Role } from '@/app/lib/roleConfig';
@@ -19,8 +20,9 @@ interface Widget {
   config?: any;
 }
 
-export default function RoleDashboard({ params }: { params: Promise<{ role: string }> }) {
-  const { role } = use(params);
+export default function RoleDashboard() {
+  const params = useParams();
+  const role = params?.role as string;
   const [activeTab, setActiveTab] = useState('overview');
   const [widgets, setWidgets] = useState<Widget[]>([]);
   const [previewData, setPreviewData] = useState<any[]>([]);

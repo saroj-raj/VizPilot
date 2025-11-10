@@ -231,7 +231,7 @@ export default function UserSwitcher() {
           <div className="p-2 bg-gray-50">
             <button
               onClick={() => {
-                router.push('/onboarding/business');
+                router.push('/settings');
                 setIsOpen(false);
               }}
               className="w-full px-3 py-2 text-sm text-gray-700 hover:bg-white rounded-lg transition-colors text-left flex items-center gap-2"
