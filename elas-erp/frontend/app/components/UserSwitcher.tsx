@@ -13,6 +13,13 @@ interface User {
   avatar?: string;
 }
 
+interface TeamMember {
+  id: string;
+  name: string;
+  email: string;
+  role: 'admin' | 'manager' | 'employee' | 'finance';
+}
+
 // Get role from URL or localStorage
 const getCurrentRole = (pathname: string): 'admin' | 'manager' | 'employee' | 'finance' => {
   if (pathname.includes('/dashboard/')) {
@@ -23,29 +30,6 @@ const getCurrentRole = (pathname: string): 'admin' | 'manager' | 'employee' | 'f
     }
   }
   return 'admin';
-};
-
-// Role configurations with actual business context
-const getRoleUser = (role: string, businessName?: string): User => {
-  const business = businessName || (typeof window !== 'undefined' ? localStorage.getItem('businessName') : null) || 'My Business';
-  const email = (typeof window !== 'undefined' ? localStorage.getItem('userEmail') : null) || 'user@example.com';
-  
-  const roleConfigs = {
-    admin: { name: 'Admin User', email },
-    manager: { name: 'Manager User', email },
-    employee: { name: 'Employee User', email },
-    finance: { name: 'Finance User', email },
-  };
-  
-  const config = roleConfigs[role as keyof typeof roleConfigs] || roleConfigs.admin;
-  
-  return {
-    id: role,
-    name: config.name,
-    email: config.email,
-    role: role as 'admin' | 'manager' | 'employee' | 'finance',
-    business,
-  };
 };
 
 const ROLE_COLORS = {
@@ -67,6 +51,8 @@ export default function UserSwitcher() {
   const pathname = usePathname();
   const { signOut, user } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [loading, setLoading] = useState(true);
   
   // Get current role from URL
   const currentRole = getCurrentRole(pathname);
@@ -74,21 +60,64 @@ export default function UserSwitcher() {
     ? localStorage.getItem('businessName') || 'My Business'
     : 'My Business';
   
-  const [currentUser, setCurrentUser] = useState<User>(() => getRoleUser(currentRole, businessName));
-  
-  // Update current user when pathname changes
+  // Load team members from localStorage
   useEffect(() => {
-    const newRole = getCurrentRole(pathname);
-    setCurrentUser(getRoleUser(newRole, businessName));
-  }, [pathname, businessName]);
+    try {
+      const saved = localStorage.getItem('teamMembers');
+      if (saved) {
+        const members: TeamMember[] = JSON.parse(saved);
+        setTeamMembers(members);
+      }
+    } catch (error) {
+      console.error('Error loading team members:', error);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
   
-  // Available roles for switching
-  const availableRoles: User[] = [
-    getRoleUser('admin', businessName),
-    getRoleUser('manager', businessName),
-    getRoleUser('employee', businessName),
-    getRoleUser('finance', businessName),
-  ];
+  // Get current user info
+  const getCurrentUser = (): User => {
+    // Try to find current user in team members
+    const currentMember = teamMembers.find(m => m.role === currentRole);
+    const email = (typeof window !== 'undefined' ? localStorage.getItem('userEmail') : null) || 'user@example.com';
+    
+    if (currentMember) {
+      return {
+        id: currentMember.id,
+        name: currentMember.name,
+        email: currentMember.email,
+        role: currentMember.role,
+        business: businessName,
+      };
+    }
+    
+    // Fallback to role-based name if no team member found
+    const roleNames = {
+      admin: 'Administrator',
+      manager: 'Manager',
+      employee: 'Employee',
+      finance: 'Finance Manager',
+    };
+    
+    return {
+      id: currentRole,
+      name: roleNames[currentRole] || 'User',
+      email,
+      role: currentRole,
+      business: businessName,
+    };
+  };
+  
+  const currentUser = getCurrentUser();
+  
+  // Convert team members to User array
+  const availableRoles: User[] = teamMembers.map(member => ({
+    id: member.id,
+    name: member.name,
+    email: member.email,
+    role: member.role,
+    business: businessName,
+  }));
   
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -111,7 +140,6 @@ export default function UserSwitcher() {
 
   const handleSwitchUser = (user: User) => {
     console.log('🔄 Attempting to switch to:', user.role);
-    setCurrentUser(user);
     setIsOpen(false);
     
     // Navigate to the appropriate dashboard
@@ -121,10 +149,6 @@ export default function UserSwitcher() {
     // Use window.location for reliable navigation
     window.location.href = targetPath;
     
-    // In production, you would also:
-    // 1. Update auth context
-    // 2. Update localStorage/sessionStorage
-    // 3. Fetch new user-specific data
     console.log('🔄 Switched to:', user);
   };
 
@@ -191,40 +215,60 @@ export default function UserSwitcher() {
             <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2 px-2">
               Switch Role
             </div>
-            <div className="space-y-1">
-              {availableRoles.map((user) => (
+            
+            {loading ? (
+              <div className="text-center py-4 text-sm text-gray-500">
+                Loading team members...
+              </div>
+            ) : availableRoles.length === 0 ? (
+              <div className="text-center py-4">
+                <div className="text-sm text-gray-600 mb-2">No team members yet</div>
                 <button
-                  key={user.id}
-                  onClick={() => handleSwitchUser(user)}
-                  disabled={user.id === currentUser.id}
-                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors ${
-                    user.id === currentUser.id
-                      ? 'bg-blue-50 border border-blue-200 cursor-default'
-                      : 'hover:bg-gray-50 border border-transparent'
-                  }`}
+                  onClick={() => {
+                    router.push('/team');
+                    setIsOpen(false);
+                  }}
+                  className="text-sm text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  {/* Role Icon */}
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                    ROLE_COLORS[user.role]
-                  } border`}>
-                    {ROLE_ICONS[user.role]}
-                  </div>
-                  
-                  {/* User Details */}
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium text-gray-900 truncate">{user.name}</div>
-                    <div className="text-xs text-gray-500 capitalize">{user.role}</div>
-                  </div>
-                  
-                  {/* Active Indicator */}
-                  {user.id === currentUser.id && (
-                    <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  )}
+                  Add Team Members →
                 </button>
-              ))}
-            </div>
+              </div>
+            ) : (
+              <div className="space-y-1">
+                {availableRoles.map((user) => (
+                  <button
+                    key={user.id}
+                    onClick={() => handleSwitchUser(user)}
+                    disabled={user.role === currentUser.role}
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-left transition-colors ${
+                      user.role === currentUser.role
+                        ? 'bg-blue-50 border border-blue-200 cursor-default'
+                        : 'hover:bg-gray-50 border border-transparent'
+                    }`}
+                  >
+                    {/* Role Icon */}
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold ${
+                      ROLE_COLORS[user.role]
+                    } border`}>
+                      {ROLE_ICONS[user.role]}
+                    </div>
+                    
+                    {/* User Details */}
+                    <div className="flex-1 min-w-0">
+                      <div className="text-sm font-medium text-gray-900 truncate">{user.name}</div>
+                      <div className="text-xs text-gray-500 capitalize">{user.role}</div>
+                    </div>
+                    
+                    {/* Active Indicator */}
+                    {user.role === currentUser.role && (
+                      <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Actions */}

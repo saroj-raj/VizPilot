@@ -1,5 +1,6 @@
 import './globals.css';
 import { AuthProvider } from '../contexts/AuthContext';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: 'Elas ERP - Enterprise Resource Planning',
@@ -12,6 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased bg-gray-50">
         <AuthProvider>
           {children}
+          <SpeedInsights />
         </AuthProvider>
       </body>
     </html>

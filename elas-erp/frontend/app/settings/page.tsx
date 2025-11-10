@@ -259,6 +259,26 @@ export default function SettingsPage() {
           </form>
         </div>
 
+        {/* Team Management Section */}
+        <div className="bg-white rounded-xl shadow-sm p-6 mt-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Team Management</h2>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-medium text-gray-900">Manage Team Members</p>
+              <p className="text-sm text-gray-600">Add, edit, or remove team members and assign roles</p>
+            </div>
+            <button
+              onClick={() => router.push('/team')}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center gap-2"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+              Manage Team
+            </button>
+          </div>
+        </div>
+
         {/* Danger Zone */}
         <div className="bg-white rounded-xl shadow-sm p-6 mt-6 border-2 border-red-200">
           <h2 className="text-lg font-semibold text-red-600 mb-4">Danger Zone</h2>
