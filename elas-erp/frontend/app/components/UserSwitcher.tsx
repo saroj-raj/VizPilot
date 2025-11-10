@@ -110,11 +110,16 @@ export default function UserSwitcher() {
   }, [isOpen]);
 
   const handleSwitchUser = (user: User) => {
+    console.log('🔄 Attempting to switch to:', user.role);
     setCurrentUser(user);
     setIsOpen(false);
     
     // Navigate to the appropriate dashboard
-    router.push(`/dashboard/${user.role}`);
+    const targetPath = `/dashboard/${user.role}`;
+    console.log('📍 Target path:', targetPath);
+    
+    // Use window.location for reliable navigation
+    window.location.href = targetPath;
     
     // In production, you would also:
     // 1. Update auth context
