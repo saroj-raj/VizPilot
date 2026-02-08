@@ -1,0 +1,96 @@
+{
+  "id": "97bb0f1f-521c-45bd-a0bd-d0333991ae43",
+  "name": "boston - Retail",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Salary Distribution",
+      "explanation": "This chart shows the distribution of salaries across different employees, grouped by their last names.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Salary Distribution",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "FirstName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Salary",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "FirstName",
+        "y_column": "Salary",
+        "description": "This chart shows the distribution of salaries across different employees, grouped by their last names."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "table",
+      "title": "Average Salary by Employee",
+      "explanation": "This table displays the average salary for each employee, providing a clear overview of individual salaries.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Average Salary by Employee",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "EmployeeID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Salary",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "EmployeeID",
+        "y_column": "Salary",
+        "description": "This table displays the average salary for each employee, providing a clear overview of individual salaries."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "6bce8925-753d-4a0d-92de-e16d521bdd65_employees.csv",
+  "meta": {
+    "domain": "Retail",
+    "intent": "sales and revenue growth analysis ",
+    "created_at": "2025-10-29T15:09:52.744Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

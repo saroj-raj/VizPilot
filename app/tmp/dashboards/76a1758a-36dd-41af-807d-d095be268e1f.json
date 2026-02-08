@@ -1,0 +1,178 @@
+{
+  "id": "76a1758a-36dd-41af-807d-d095be268e1f",
+  "name": "boston - Retail",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Total Receivables by Client",
+      "explanation": "This chart shows the total receivables for each client, helping to identify top clients by revenue.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Client",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ClientName",
+        "y_column": "TotalReceivables",
+        "description": "This chart shows the total receivables for each client, helping to identify top clients by revenue."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "bar_chart",
+      "title": "Current vs Total Receivables by Project Manager",
+      "explanation": "This chart compares the current receivables to the total receivables for each project manager, highlighting areas for improvement.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Current vs Total Receivables by Project Manager",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Current",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ProjectManager",
+        "y_column": "Current",
+        "description": "This chart compares the current receivables to the total receivables for each project manager, highlighting areas for improvement."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_3",
+      "type": "table",
+      "title": "Days30 by Account ID",
+      "explanation": "This table displays the number of days outstanding for each account, allowing for quick identification of overdue accounts.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Days30 by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Days30",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "AccountID",
+        "y_column": "Days30",
+        "description": "This table displays the number of days outstanding for each account, allowing for quick identification of overdue accounts."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_4",
+      "type": "bar_chart",
+      "title": "Total Receivables by Project Manager",
+      "explanation": "This chart shows the total receivables for each project manager, helping to evaluate their performance.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Project Manager",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ProjectManager",
+        "y_column": "TotalReceivables",
+        "description": "This chart shows the total receivables for each project manager, helping to evaluate their performance."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "545a2c15-45c7-4fbc-83fe-d060960c315f_accounts_receivable.csv",
+  "meta": {
+    "domain": "Retail",
+    "intent": "sales and revenue growth",
+    "created_at": "2025-10-28T19:18:00.853Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_3",
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_4",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "id": "5234d43f-f927-40cd-bbe9-325ece8fabc4",
+  "name": "boston - Education",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Enrolled vs Capacity Trend",
+      "explanation": "This chart compares the number of enrolled students with the course capacity across different courses.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Enrolled vs Capacity Trend",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "course_name",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "enrolled",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "course_name",
+        "y_column": "enrolled",
+        "description": "This chart compares the number of enrolled students with the course capacity across different courses."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "pie_chart",
+      "title": "Credits Distribution by Course",
+      "explanation": "This chart shows the distribution of credits across different courses.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Credits Distribution by Course",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "y": {
+            "field": "credits",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": null,
+        "y_column": "credits",
+        "description": "This chart shows the distribution of credits across different courses."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_3",
+      "type": "bar_chart",
+      "title": "Enrollment Rate by Course",
+      "explanation": "This chart displays the enrollment rate for each course.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Enrollment Rate by Course",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "course_name",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "enrolled",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "course_name",
+        "y_column": "enrolled",
+        "description": "This chart displays the enrollment rate for each course."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_4",
+      "type": "bar_chart",
+      "title": "Course Capacity Utilization",
+      "explanation": "This chart shows the capacity utilization for each course, with enrolled students as a proportion of course capacity.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Course Capacity Utilization",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "course_name",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "enrolled",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "course_name",
+        "y_column": "enrolled",
+        "description": "This chart shows the capacity utilization for each course, with enrolled students as a proportion of course capacity."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_5",
+      "type": "table",
+      "title": "Top Courses by Enrollment",
+      "explanation": "This table lists the top courses by enrollment, allowing for easy comparison of course popularity.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Top Courses by Enrollment",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "course_name",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "enrolled",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "course_name",
+        "y_column": "enrolled",
+        "description": "This table lists the top courses by enrollment, allowing for easy comparison of course popularity."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "f1202bd9-8d92-4ae7-a0a9-58765a2931a9_courses_parsed.csv",
+  "meta": {
+    "domain": "Education",
+    "intent": "sales and revenue growth analyis ",
+    "created_at": "2025-10-30T23:26:43.678Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_3",
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_4",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_5",
+        "x": 0,
+        "y": 8,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "id": "377a11f7-84d2-4a09-9b38-0962ec7694ed",
+  "name": "boston - Education",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Cohort Distribution",
+      "explanation": "This widget shows the distribution of students across different cohorts.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Cohort Distribution",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "cohort",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "cohort",
+        "y_column": "count",
+        "description": "This widget shows the distribution of students across different cohorts."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "bar_chart",
+      "title": "Average Credits by Cohort",
+      "explanation": "This widget displays the average number of credits for each cohort.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Average Credits by Cohort",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "cohort",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "avg(credits",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "cohort",
+        "y_column": "avg(credits)",
+        "description": "This widget displays the average number of credits for each cohort."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_3",
+      "type": "line_chart",
+      "title": "Tuition Trend",
+      "explanation": "This widget shows the trend of tuition fees across different enrollments.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Tuition Trend",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "line",
+          "point": true
+        },
+        "encoding": {
+          "x": {
+            "field": "enrollment_id",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "tuition",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "enrollment_id",
+        "y_column": "tuition",
+        "description": "This widget shows the trend of tuition fees across different enrollments."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_4",
+      "type": "table",
+      "title": "Student Enrollment Count",
+      "explanation": "This widget lists the number of enrollments for each student.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Student Enrollment Count",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "student_name",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "student_name",
+        "y_column": "count",
+        "description": "This widget lists the number of enrollments for each student."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_5",
+      "type": "bar_chart",
+      "title": "Cohort-wise Enrollment Count",
+      "explanation": "This widget shows the number of enrollments for each cohort.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Cohort-wise Enrollment Count",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "cohort",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "count",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "cohort",
+        "y_column": "count",
+        "description": "This widget shows the number of enrollments for each cohort."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "22d732f3-2d10-4937-9f02-c2c4c61cdae8_enrollments.csv",
+  "meta": {
+    "domain": "Education",
+    "intent": "education analysis ",
+    "created_at": "2025-10-30T14:53:59.885Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_3",
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_4",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_5",
+        "x": 0,
+        "y": 8,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: elas-api
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: elas-erp/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: Elas ERP
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: https://elas-erp.vercel.app,http://localhost:4000
+      - key: FRONTEND_URL
+        value: https://elas-erp.vercel.app
+      - key: MAX_UPLOAD_SIZE_MB
+        value: 50
+      - key: ALLOWED_FILE_TYPES
+        value: .csv,.xlsx,.xls,.pdf,.docx,.txt

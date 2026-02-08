@@ -1,0 +1,46 @@
+{
+  "id": "9be6b51e-5c47-4cf4-bd28-446abbe94380",
+  "name": "boston - Education",
+  "widgets": [
+    {
+      "title": "Top Categories",
+      "explanation": "Top contributors",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Top Categories",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "a2587fde-fe0d-4b02-991f-295cb51e2cc6_accounts_receivable.csv",
+  "meta": {
+    "domain": "Education",
+    "intent": "revenue growth and sales analysis ",
+    "created_at": "2025-10-28T18:49:24.862Z",
+    "layout": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

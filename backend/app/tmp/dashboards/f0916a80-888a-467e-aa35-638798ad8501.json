@@ -1,0 +1,178 @@
+{
+  "id": "f0916a80-888a-467e-aa35-638798ad8501",
+  "name": "fdgf - Retail",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Total Receivables by Client",
+      "explanation": "This chart shows the total receivables for each client, allowing for easy comparison and identification of top clients.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Client",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ClientName",
+        "y_column": "TotalReceivables",
+        "description": "This chart shows the total receivables for each client, allowing for easy comparison and identification of top clients."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "line_chart",
+      "title": "Current vs Days30 by Account",
+      "explanation": "This chart compares the current and days30 values for each account, providing insight into account performance over time.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Current vs Days30 by Account",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "line",
+          "point": true
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Current",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "AccountID",
+        "y_column": "Current",
+        "description": "This chart compares the current and days30 values for each account, providing insight into account performance over time."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_3",
+      "type": "bar_chart",
+      "title": "Project Manager Performance",
+      "explanation": "This chart shows the total receivables for each project manager, allowing for evaluation of project manager performance.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Project Manager Performance",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ProjectManager",
+        "y_column": "TotalReceivables",
+        "description": "This chart shows the total receivables for each project manager, allowing for evaluation of project manager performance."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_4",
+      "type": "table",
+      "title": "Client Receivables Summary",
+      "explanation": "This table provides a summary of total receivables for each client, allowing for easy review and analysis of client data.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Client Receivables Summary",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ClientName",
+        "y_column": "TotalReceivables",
+        "description": "This table provides a summary of total receivables for each client, allowing for easy review and analysis of client data."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "caceac6a-5ef6-487a-85ba-c333177fca1a_accounts_receivable_parsed.csv",
+  "meta": {
+    "domain": "Retail",
+    "intent": "analysis",
+    "created_at": "2025-11-05T10:41:06.964Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_3",
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_4",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

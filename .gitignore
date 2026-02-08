@@ -1,174 +1,47 @@
-# OS / editors
-.DS_Store
-Thumbs.db
-.idea/
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
-
-# Git
-*.orig
-*.rej
-
 # Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-.eggs/
 .venv/
-venv/
-.env
-.env.*
-dist/
-build/
-.mypy_cache/
-.pytest_cache/
-.pyright/
-.coverage
-htmlcov/
-
-# FastAPI uploads / temp
-backend/.cache/
-backend/app/tmp/
-backend/app/__pycache__/
-backend/app/services/__pycache__/
-backend/app/models/__pycache__/
-backend/app/**/*.log
-elas-erp/backend/app/tmp/
-elas-erp/backend/app/tmp/uploads/
-elas-erp/app/tmp/
-elas-erp/app/tmp/uploads/
-elas-erp/GROQ_DEBUG.log
-GROQ_DEBUG.log
+__pycache__/
+*.pyc
+*.pyo
 *.log
 
-# Test files created during development
-test_*.csv
-test_*.xlsx
-test_*.txt
-**/test_*.csv
-**/test_*.xlsx
-quick_test_upload.ps1
-test_upload.ps1
-restart_backend.ps1
+# Node/Next.js
+node_modules/
+.next/
+out/
+dist/
+.vercel/
 
-# Node / Next.js
-frontend/node_modules/
-frontend/.next/
-frontend/out/
-frontend/.vercel/
-frontend/.turbo/
-frontend/.cache/
-# ALL node_modules directories
-**/node_modules/
-elas-erp/frontend/node_modules/
-artie-dashboard/frontend/node_modules/
+# Environment variables (sensitive)
+.env
+.env.local
+.env.production
+.env.development
+
+# Logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 
-# TypeScript
-frontend/**/*.tsbuildinfo
+# Master rules (local only)
+RULES.md
 
-# Docker
-docker-data/
-**/.dockerignore
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# DB / data
-data/
-*.db
-*.duckdb
-*.sqlite
-*.sqlite3
+# OS
+.DS_Store
+Thumbs.db
 
-# Dataset files (CSV, Excel, etc.)
-*.csv
-*.xlsx
-*.xls
-*.xlsm
-*.xlsb
-*.tsv
-*.dat
-*.json
-*.parquet
-!**/sample_data/**
-!**/example_data/**
-!**/test_data/**
-
-# Uploaded files
-uploads/
-**/uploads/**
-**/tmp/uploads/**
-test_files/
-**/test_files/**
-
-# Generated reports
-reports/
-**/reports/**
-*.report
-*.summary
-
-# Large media files
-*.mp4
-*.avi
-*.mov
-*.mkv
-*.mp3
-*.wav
-*.flac
-*.pdf
-*.psd
-*.ai
-
-# Large binary/package files
-*.pack
-*.pack.gz
-*.idx
-*.node
-*.dylib
-*.so
-*.dll
-
-# Secrets & keys
-*.key
-*.pem
-secrets.json
-
-# Exclude large binary files (Next.js SWC, etc.)
-*.node
-**/*.node
-**/@next/swc-*/
-
-# Development documentation (keep only README.md)
-*_PLAN.md
-*_STATUS.md
-*_SUMMARY.md
-*_GUIDE.md
-*_CHECKLIST.md
-*_COMPLETE.md
-*_FIX*.md
-*_DEPLOY*.md
-COMPARISON.md
-HOW_TO_PROCEED.md
-NEXT_STEPS*.md
-PROJECT_RULES*.md
-QUICK_DECISION*.md
-RENDER_SETUP.md
-TASKS_STATUS.md
-URGENT_*.md
-
-# Test and deployment scripts
-test_*.ps1
-deploy.ps1
-sync-*.ps1
-test_files/
-
-# Build artifacts and temp files
-.next/
-out/
-.vercel/
-.turbo/
+# Test outputs
+test-results/
+playwright-report/
+test.db
+test.db-journal
+coverage/
+.pytest_cache/
+*.pytest_cache

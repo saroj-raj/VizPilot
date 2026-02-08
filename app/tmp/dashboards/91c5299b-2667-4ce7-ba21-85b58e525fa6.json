@@ -1,0 +1,174 @@
+{
+  "id": "91c5299b-2667-4ce7-ba21-85b58e525fa6",
+  "name": "boston - Manufacturing",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Total Receivables by Client",
+      "explanation": "This chart shows the total receivables for each client, helping to identify top clients and potential areas for growth.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Client",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ClientName",
+        "y_column": "TotalReceivables",
+        "description": "This chart shows the total receivables for each client, helping to identify top clients and potential areas for growth."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "bar_chart",
+      "title": "Current Receivables by Project Manager",
+      "explanation": "This chart displays the current receivables for each project manager, enabling the analysis of project manager performance.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Current Receivables by Project Manager",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Current",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ProjectManager",
+        "y_column": "Current",
+        "description": "This chart displays the current receivables for each project manager, enabling the analysis of project manager performance."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_3",
+      "type": "bar_chart",
+      "title": "Days 30 Receivables by Account ID",
+      "explanation": "This chart shows the days 30 receivables for each account ID, helping to identify accounts with outstanding payments.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Days 30 Receivables by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Days30",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "AccountID",
+        "y_column": "Days30",
+        "description": "This chart shows the days 30 receivables for each account ID, helping to identify accounts with outstanding payments."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_4",
+      "type": "table",
+      "title": "Total Receivables by Account ID",
+      "explanation": "This table displays the total receivables for each account ID, providing a detailed view of account-level performance.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": null,
+        "y_column": "TotalReceivables",
+        "description": "This table displays the total receivables for each account ID, providing a detailed view of account-level performance."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "7ec921de-5b59-4b34-bdc4-c4aa42d945a4_accounts_receivable.csv",
+  "meta": {
+    "domain": "Manufacturing",
+    "intent": "sales and revenue growth analysis ",
+    "created_at": "2025-10-28T22:13:49.136Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_3",
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_4",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

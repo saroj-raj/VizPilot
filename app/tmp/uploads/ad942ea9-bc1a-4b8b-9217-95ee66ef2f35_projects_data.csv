@@ -1,0 +1,57 @@
+ProjectID,ProjectName,ClientName,ProjectManager,StartDate,EndDate,Budget,ActualCost,Revenue,Status,Region
+PRJ001,Website Redesign,Acme Corp,John Smith,2025-01-15,2025-06-30,125000,98500,150000,In Progress,North
+PRJ002,Mobile App Development,TechStart Inc,Sarah Johnson,2025-02-01,2025-08-15,250000,180000,300000,In Progress,South
+PRJ003,CRM Implementation,Global Trade LLC,Michael Williams,2024-11-01,2025-04-30,180000,165000,220000,In Progress,East
+PRJ004,Cloud Migration,DataFlow Systems,Emily Brown,2025-01-10,2025-07-31,320000,245000,380000,In Progress,West
+PRJ005,ERP System Upgrade,Manufacturing Co,David Jones,2024-12-01,2025-05-31,450000,0,500000,Planning,North
+PRJ006,Security Audit,FinSecure Bank,Lisa Garcia,2025-03-01,2025-06-30,95000,45000,115000,In Progress,South
+PRJ007,Data Analytics Platform,Retail Giant,Robert Martinez,2025-01-20,2025-09-30,380000,-25000,420000,In Progress,East
+PRJ008,Marketing Automation,AdVenture Agency,Jennifer Rodriguez,2025-02-15,2025-07-15,145000,89000,175000,In Progress,West
+PRJ009,Infrastructure Overhaul,BuildRight Construction,William Davis,2024-10-01,2025-12-31,550000,425000,650000,In Progress,Central
+PRJ010,AI Chatbot Integration,Customer First,Amanda Miller,2025-03-10,2025-06-10,110000,0,135000,Planning,Central
+PRJ011,Network Upgrade,ConnectCorp,James Wilson,2025-01-05,2025-05-20,200000,155000,240000,In Progress,North
+PRJ012,Database Optimization,InfoSystems Ltd,Mary Moore,2025-02-20,2025-08-30,175000,0,210000,Planning,South
+PRJ013,API Development,DevOps Solutions,Christopher Taylor,2024-12-15,2025-06-15,135000,98000,165000,In Progress,East
+PRJ014,Business Intelligence,Analytics Pro,Patricia Anderson,2025-01-25,2025-07-25,290000,210000,350000,In Progress,West
+PRJ015,Backup System,SecureData Inc,Daniel Thomas,2025-03-01,2025-09-01,125000,-15000,155000,In Progress,Central
+PRJ016,Training Portal,EducatePlus,Linda Jackson,2025-02-10,2025-08-10,165000,0,200000,Planning,North
+PRJ017,Supply Chain Software,LogisticsPro,Matthew White,2024-11-20,2025-10-31,425000,315000,500000,In Progress,South
+PRJ018,Payment Gateway,FinTech Innovations,Barbara Harris,2025-01-15,2025-06-30,195000,145000,235000,In Progress,East
+PRJ019,IoT Platform,SmartDevices Co,Joseph Martin,2025-02-01,2025-11-30,485000,0,575000,Planning,West
+PRJ020,Custom Dashboard,Metrics Matter,Susan Thompson,2025-03-15,2025-07-15,85000,52000,105000,In Progress,Central
+PRJ021,Inventory System,StockMaster,Thomas Garcia,2024-12-10,2025-06-10,215000,165000,260000,In Progress,North
+PRJ022,HR Management System,PeopleFirst,Jessica Martinez,2025-01-20,2025-09-20,275000,-30000,330000,In Progress,South
+PRJ023,Document Management,PaperLess Solutions,Charles Robinson,2025-02-25,2025-08-25,145000,98000,180000,In Progress,East
+PRJ024,Video Conferencing,MeetUp Tech,Karen Clark,2025-03-05,2025-07-05,125000,0,155000,Planning,West
+PRJ025,Quality Assurance,TestRight,Anthony Rodriguez,2025-01-10,2025-10-31,195000,145000,240000,In Progress,Central
+PRJ026,Compliance Software,RegTech Systems,Nancy Lewis,2024-11-15,2025-05-15,165000,0,200000,Planning,North
+PRJ027,Procurement Portal,BuyWise,Mark Lee,2025-02-05,2025-08-05,235000,175000,285000,In Progress,South
+PRJ028,Customer Portal,ClientConnect,Betty Walker,2025-01-30,2025-07-30,185000,0,225000,Planning,East
+PRJ029,Asset Tracking,TrackIT Solutions,Paul Hall,2025-03-10,2025-09-10,155000,98000,190000,In Progress,West
+PRJ030,Performance Monitoring,MetricsPro,Helen Allen,2025-02-15,2025-12-15,265000,-20000,320000,In Progress,Central
+PRJ031,Integration Platform,ConnectAll,Jason Young,2025-01-25,2025-08-25,295000,0,360000,Planning,North
+PRJ032,Workflow Automation,AutoFlow,Deborah Hernandez,2024-12-20,2025-06-20,175000,125000,215000,In Progress,South
+PRJ033,Reporting System,DataViz Inc,Ryan King,2025-03-01,2025-09-01,145000,0,180000,Planning,East
+PRJ034,Email Marketing,MailMaster,Sandra Kim,2025-01-15,2025-07-15,95000,68000,120000,In Progress,West
+PRJ035,Social Media Tool,SocialHub,Kevin Park,2025-02-20,2025-08-20,115000,0,145000,Planning,Central
+PRJ036,Content Management,ContentKing,Laura Chen,2024-11-25,2025-05-25,205000,155000,250000,In Progress,North
+PRJ037,E-commerce Platform,ShopNow,Michael Lee,2025-01-05,2025-10-05,425000,-35000,500000,In Progress,South
+PRJ038,Reservation System,BookIt,Emma Wilson,2025-02-10,2025-08-10,165000,0,205000,Planning,East
+PRJ039,Survey Platform,FeedbackPro,Oliver Brown,2025-03-15,2025-07-15,95000,62000,120000,In Progress,West
+PRJ040,Learning Management,EduTech Solutions,Sophia Davis,2025-01-20,2025-11-20,325000,245000,390000,In Progress,Central
+PRJ041,Fleet Management,DriveRight,Noah Martinez,2024-12-15,2025-06-15,185000,0,230000,Planning,North
+PRJ042,Property Management,RealEstate Pro,Isabella Garcia,2025-02-25,2025-08-25,245000,175000,300000,In Progress,South
+PRJ043,Ticketing System,SupportHub,Liam Rodriguez,2025-01-10,2025-07-10,125000,-18000,155000,In Progress,East
+PRJ044,Scheduling Software,PlanIt,Ava Lopez,2025-03-05,2025-09-05,145000,0,180000,Planning,West
+PRJ045,Collaboration Tool,TeamWork,Ethan Wilson,2025-02-01,2025-08-01,195000,135000,240000,In Progress,Central
+PRJ046,Knowledge Base,InfoHub,Mia Anderson,2024-11-20,2025-05-20,115000,0,145000,Planning,North
+PRJ047,Vendor Management,SupplierLink,Lucas Thomas,2025-01-15,2025-07-15,175000,125000,215000,In Progress,South
+PRJ048,Budget Planning,FinPlan,Charlotte Taylor,2025-02-20,2025-08-20,155000,0,195000,Planning,East
+PRJ049,Risk Assessment,RiskGuard,Benjamin Moore,2025-03-10,2025-09-10,205000,-22000,250000,In Progress,West
+PRJ050,Audit Trail,ComplianceTrack,Amelia Jackson,2025-01-25,2025-07-25,135000,95000,170000,In Progress,Central
+PRJ051,Access Control,SecureGate,Mason White,2024-12-05,2025-06-05,165000,0,205000,Planning,North
+PRJ052,Data Warehouse,BigData Solutions,Harper Harris,2025-02-15,2025-12-15,485000,355000,575000,In Progress,South
+PRJ053,Machine Learning,AI Insights,Elijah Martin,2025-01-20,2025-10-20,395000,0,475000,Planning,East
+PRJ054,Blockchain Integration,ChainTech,Evelyn Thompson,2025-03-01,2025-11-30,525000,-28000,625000,In Progress,West
+PRJ055,Virtual Reality,VR Worlds,Alexander Lee,2025-02-10,2025-12-10,445000,0,535000,Planning,Central
+PRJ056,Augmented Reality,AR Solutions,Abigail Hall,2025-01-05,2025-09-05,375000,275000,450000,In Progress,North

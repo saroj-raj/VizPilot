@@ -1,0 +1,46 @@
+{
+  "id": "df6f6f71-ba75-48de-a846-df4e18c981c4",
+  "name": "boston - Retail",
+  "widgets": [
+    {
+      "title": "Top Categories",
+      "explanation": "Top contributors",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Top Categories",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "d1ff9221-65ef-4686-ac92-e05f242eafd8_accounts_receivable.csv",
+  "meta": {
+    "domain": "Retail",
+    "intent": "revenue and sales analysis ",
+    "created_at": "2025-10-28T19:06:00.346Z",
+    "layout": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

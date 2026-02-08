@@ -1,0 +1,174 @@
+{
+  "id": "a8745fd6-d0b6-4f13-91fa-34bfd39813da",
+  "name": "boston - Finance",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Total Receivables by Client",
+      "explanation": "This chart shows the total receivables for each client, allowing for comparison and analysis of client performance.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Client",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ClientName",
+        "y_column": "TotalReceivables",
+        "description": "This chart shows the total receivables for each client, allowing for comparison and analysis of client performance."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "bar_chart",
+      "title": "Current Amount by Project Manager",
+      "explanation": "This chart displays the current amount for each project manager, enabling analysis of project manager performance.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Current Amount by Project Manager",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Current",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ProjectManager",
+        "y_column": "Current",
+        "description": "This chart displays the current amount for each project manager, enabling analysis of project manager performance."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_3",
+      "type": "table",
+      "title": "Days 30 Overview",
+      "explanation": "This table provides a detailed view of the days 30 data, allowing for in-depth analysis and review.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Days 30 Overview",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "y": {
+            "field": "Days30",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": null,
+        "y_column": "Days30",
+        "description": "This table provides a detailed view of the days 30 data, allowing for in-depth analysis and review."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_4",
+      "type": "line_chart",
+      "title": "Total Receivables by Account ID",
+      "explanation": "This line chart shows the total receivables for each account ID, facilitating trend analysis and identification of patterns.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "line",
+          "point": true
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "AccountID",
+        "y_column": "TotalReceivables",
+        "description": "This line chart shows the total receivables for each account ID, facilitating trend analysis and identification of patterns."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "f40aee9b-4652-4a29-aaba-f4ed6fa94074_accounts_receivable_parsed.csv",
+  "meta": {
+    "domain": "Finance",
+    "intent": "analysis",
+    "created_at": "2025-11-05T11:08:38.545Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_3",
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_4",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

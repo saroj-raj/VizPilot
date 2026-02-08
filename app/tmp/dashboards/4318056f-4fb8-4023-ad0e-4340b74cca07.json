@@ -1,0 +1,142 @@
+{
+  "id": "4318056f-4fb8-4023-ad0e-4340b74cca07",
+  "name": "boston - Manufacturing",
+  "widgets": [
+    {
+      "title": "Total Receivables by Client",
+      "explanation": "This widget shows the total receivables for each client, providing insight into which clients are generating the most revenue.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Client",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    },
+    {
+      "title": "Current Amount by Project Manager",
+      "explanation": "This widget displays the current amount for each project manager, allowing for comparison of performance across different project managers.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Current Amount by Project Manager",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Current",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    },
+    {
+      "title": "Days 30 Outstanding by Account ID",
+      "explanation": "This widget presents a table showing the number of days outstanding for each account ID, helping to identify accounts with overdue payments.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Days 30 Outstanding by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Days30",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    },
+    {
+      "title": "Total Receivables by Account ID",
+      "explanation": "This widget shows the total receivables for each account ID, providing a detailed view of revenue by account.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "f320495b-4420-496a-9a47-2727ee8fe1a7_accounts_receivable.csv",
+  "meta": {
+    "domain": "Manufacturing",
+    "intent": "sales and revenue growth ",
+    "created_at": "2025-10-28T19:13:46.341Z",
+    "layout": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "id": "974bcd96-c030-4b62-a6d8-3f8d0ff973f4",
+  "name": "bosoton - Manufacturing",
+  "widgets": [
+    {
+      "id": "widget_1",
+      "type": "bar_chart",
+      "title": "Total Receivables by Client",
+      "explanation": "This widget shows the total receivables for each client, allowing for a comparison of sales performance across different clients.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Client",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ClientName",
+        "y_column": "TotalReceivables",
+        "description": "This widget shows the total receivables for each client, allowing for a comparison of sales performance across different clients."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_2",
+      "type": "bar_chart",
+      "title": "Current Amount by Project Manager",
+      "explanation": "This widget displays the current amount for each project manager, enabling the analysis of revenue growth by project manager.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Current Amount by Project Manager",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Current",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "ProjectManager",
+        "y_column": "Current",
+        "description": "This widget displays the current amount for each project manager, enabling the analysis of revenue growth by project manager."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_3",
+      "type": "table",
+      "title": "Days 30 Outstanding by Account ID",
+      "explanation": "This widget presents the days 30 outstanding for each account ID, providing insight into the payment patterns of different accounts.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Days 30 Outstanding by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Days30",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "AccountID",
+        "y_column": "Days30",
+        "description": "This widget presents the days 30 outstanding for each account ID, providing insight into the payment patterns of different accounts."
+      },
+      "data": {},
+      "role": "auto"
+    },
+    {
+      "id": "widget_4",
+      "type": "bar_chart",
+      "title": "Total Receivables by Account ID",
+      "explanation": "This widget shows the total receivables for each account ID, allowing for the identification of high-value accounts.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "config": {
+        "x_column": "AccountID",
+        "y_column": "TotalReceivables",
+        "description": "This widget shows the total receivables for each account ID, allowing for the identification of high-value accounts."
+      },
+      "data": {},
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "5972c92c-0d47-442c-8cc5-1a82c0250ccd_accounts_receivable.csv",
+  "meta": {
+    "domain": "Manufacturing",
+    "intent": "sales and revenue growth analysis ",
+    "created_at": "2025-10-29T13:50:55.637Z",
+    "layout": [
+      {
+        "i": "widget_1",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_2",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_3",
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "i": "widget_4",
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

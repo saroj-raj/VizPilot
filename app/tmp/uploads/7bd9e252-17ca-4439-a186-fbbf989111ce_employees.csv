@@ -1,0 +1,46 @@
+EmployeeID,FirstName,LastName,Email,Department,Position,HireDate,Status,Salary,Manager,Location
+EMP001,Saroj,Raj,saroj@iitb.edu,Executive,Administrator,2023-01-15,Active,150000,CEO,Austin
+EMP002,Radha,Kumar,radha@iitb.edu,Finance,CFO,2023-02-01,Active,180000,CEO,Austin
+EMP003,Milind,Patel,milind@iitb.edu,Technology,CTO,2023-02-15,Active,180000,CEO,Austin
+EMP004,John,Smith,john.smith@company.com,Sales,Sales Manager,2023-03-01,Active,120000,CSO,Dallas
+EMP005,Sarah,Johnson,sarah.johnson@company.com,Sales,Sales Manager,2023-03-15,Active,120000,CSO,San Jose
+EMP006,Michael,Williams,michael.williams@company.com,Operations,Operations Manager,2023-04-01,Active,110000,COO,Pleasanton
+EMP007,Emily,Brown,emily.brown@company.com,Sales,Sales Manager,2023-04-15,Active,120000,CSO,Austin
+EMP008,David,Jones,david.jones@company.com,Operations,Project Manager,2023-05-01,Active,95000,Operations Manager,Dallas
+EMP009,Lisa,Garcia,lisa.garcia@company.com,Finance,Finance Manager,2023-05-15,Active,105000,CFO,Austin
+EMP010,Robert,Martinez,robert.martinez@company.com,Operations,Project Manager,2023-06-01,Active,95000,Operations Manager,San Jose
+EMP011,Jennifer,Rodriguez,jennifer.rodriguez@company.com,Sales,Sales Manager,2023-06-15,Active,120000,CSO,Pleasanton
+EMP012,William,Davis,william.davis@company.com,Operations,Project Manager,2023-07-01,Active,95000,Operations Manager,Dallas
+EMP013,Amanda,Miller,amanda.miller@company.com,Operations,Project Manager,2023-07-15,Active,95000,Operations Manager,Austin
+EMP014,James,Wilson,james.wilson@company.com,Technology,Senior Engineer,2023-08-01,Active,115000,CTO,San Jose
+EMP015,Mary,Moore,mary.moore@company.com,Operations,Project Manager,2023-08-15,Active,95000,Operations Manager,Pleasanton
+EMP016,Christopher,Taylor,christopher.taylor@company.com,Technology,Engineer,2023-09-01,Active,85000,CTO,Dallas
+EMP017,Patricia,Anderson,patricia.anderson@company.com,Sales,Sales Manager,2023-09-15,Active,120000,CSO,Austin
+EMP018,Daniel,Thomas,daniel.thomas@company.com,Technology,Senior Engineer,2023-10-01,Active,115000,CTO,San Jose
+EMP019,Linda,Jackson,linda.jackson@company.com,Operations,Project Manager,2023-10-15,Active,95000,Operations Manager,Pleasanton
+EMP020,Matthew,White,matthew.white@company.com,Sales,Sales Manager,2023-11-01,Active,120000,CSO,Dallas
+EMP021,Barbara,Harris,barbara.harris@company.com,Technology,Engineer,2023-11-15,Active,85000,CTO,Austin
+EMP022,Joseph,Martin,joseph.martin@company.com,Sales,Sales Manager,2023-12-01,Active,120000,CSO,San Jose
+EMP023,Susan,Thompson,susan.thompson@company.com,Operations,Project Manager,2024-01-01,Active,95000,Operations Manager,Pleasanton
+EMP024,Thomas,Garcia,thomas.garcia@company.com,Sales,Senior Sales Rep,2024-01-15,Active,95000,Sales Manager,Dallas
+EMP025,Jessica,Martinez,jessica.martinez@company.com,Sales,Senior Sales Rep,2024-02-01,Active,95000,Sales Manager,Austin
+EMP026,Charles,Robinson,charles.robinson@company.com,Technology,Senior Engineer,2024-02-15,Active,115000,CTO,San Jose
+EMP027,Karen,Clark,karen.clark@company.com,Sales,Sales Rep,2024-03-01,Active,75000,Sales Manager,Pleasanton
+EMP028,Anthony,Rodriguez,anthony.rodriguez@company.com,Operations,Project Manager,2024-03-15,Active,95000,Operations Manager,Dallas
+EMP029,Nancy,Lewis,nancy.lewis@company.com,Finance,Accountant,2024-04-01,Active,75000,Finance Manager,Austin
+EMP030,Mark,Lee,mark.lee@company.com,Sales,Sales Rep,2024-04-15,Active,75000,Sales Manager,San Jose
+EMP031,Betty,Walker,betty.walker@company.com,Operations,Project Coordinator,2024-05-01,Active,65000,Operations Manager,Pleasanton
+EMP032,Paul,Hall,paul.hall@company.com,Technology,Engineer,2024-05-15,Active,85000,CTO,Dallas
+EMP033,Helen,Allen,helen.allen@company.com,Finance,Financial Analyst,2024-06-01,Active,80000,Finance Manager,Austin
+EMP034,Jason,Young,jason.young@company.com,Technology,Senior Engineer,2024-06-15,Active,115000,CTO,San Jose
+EMP035,Deborah,Hernandez,deborah.hernandez@company.com,Operations,Project Manager,2024-07-01,Active,95000,Operations Manager,Pleasanton
+EMP036,Ryan,King,ryan.king@company.com,Sales,Sales Rep,2024-07-15,Active,75000,Sales Manager,Dallas
+EMP037,Sandra,Kim,sandra.kim@company.com,Marketing,Marketing Manager,2024-08-01,Active,105000,CMO,Austin
+EMP038,Kevin,Park,kevin.park@company.com,Marketing,Marketing Specialist,2024-08-15,Active,75000,Marketing Manager,San Jose
+EMP039,Laura,Chen,laura.chen@company.com,Technology,Engineer,2024-09-01,Active,85000,CTO,Pleasanton
+EMP040,Michael,Lee,michael.lee@company.com,Sales,Sales Rep,2024-09-15,Active,75000,Sales Manager,Dallas
+EMP041,Emma,Wilson,emma.wilson@company.com,Operations,Quality Control Manager,2024-10-01,Active,90000,Operations Manager,Austin
+EMP042,Oliver,Brown,oliver.brown@company.com,Technology,Analyst,2024-10-15,Active,70000,CTO,San Jose
+EMP043,Sophia,Davis,sophia.davis@company.com,HR,HR Manager,2024-11-01,Active,95000,CHRO,Pleasanton
+EMP044,Noah,Martinez,noah.martinez@company.com,Operations,Technician,2024-11-15,Active,60000,Operations Manager,Dallas
+EMP045,Isabella,Garcia,isabella.garcia@company.com,Finance,Accountant,2024-12-01,Active,75000,Finance Manager,Austin

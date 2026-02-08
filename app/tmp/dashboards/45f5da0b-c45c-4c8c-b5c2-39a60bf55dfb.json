@@ -1,0 +1,46 @@
+{
+  "id": "45f5da0b-c45c-4c8c-b5c2-39a60bf55dfb",
+  "name": "boston - Retail",
+  "widgets": [
+    {
+      "title": "Top Categories",
+      "explanation": "Top contributors",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Top Categories",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "Region",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalDeals",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "ba44dfe4-879f-4611-8778-68009ab636d2_regional_sales.csv",
+  "meta": {
+    "domain": "Retail",
+    "intent": "sales analysis ",
+    "created_at": "2025-10-28T18:59:50.673Z",
+    "layout": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "id": "51805df9-aecb-4958-b76c-e5ffcc193218",
+  "name": "boston - Retail",
+  "widgets": [
+    {
+      "title": "Total Receivables by Client",
+      "explanation": "This chart shows the total receivables for each client, providing insight into which clients have the highest outstanding balances.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables by Client",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ClientName",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    },
+    {
+      "title": "Current Amount by Project Manager",
+      "explanation": "This chart displays the current amount for each project manager, allowing for comparison of project manager performance.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Current Amount by Project Manager",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "ProjectManager",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Current",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    },
+    {
+      "title": "Days 30 by Account ID",
+      "explanation": "This chart shows the days 30 amount for each account ID, providing a snapshot of accounts with outstanding balances.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Days 30 by Account ID",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "bar",
+          "point": false
+        },
+        "encoding": {
+          "x": {
+            "field": "AccountID",
+            "type": "nominal"
+          },
+          "y": {
+            "field": "Days30",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    },
+    {
+      "title": "Total Receivables Summary",
+      "explanation": "This table provides a summary of total receivables, offering a quick overview of the current sales situation.",
+      "vega_spec": {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Total Receivables Summary",
+        "data": {
+          "name": "preview"
+        },
+        "mark": {
+          "type": "area",
+          "point": false
+        },
+        "encoding": {
+          "y": {
+            "field": "TotalReceivables",
+            "type": "quantitative"
+          }
+        }
+      },
+      "role": "auto"
+    }
+  ],
+  "dataset_id": "2bc88cc0-8f5a-414e-857e-c2fbe62c49a9_accounts_receivable.csv",
+  "meta": {
+    "domain": "Retail",
+    "intent": "sales",
+    "created_at": "2025-10-28T19:03:00.820Z",
+    "layout": [
+      {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      {
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      }
+    ]
+  }
+}
