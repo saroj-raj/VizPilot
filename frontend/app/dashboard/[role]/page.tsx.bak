@@ -1,0 +1,3 @@
+'use client';
+// Backup of original RoleDashboard page before temporary minimal replacement.
+// If needed, restore by renaming this file to page.tsx
