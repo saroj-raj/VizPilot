@@ -59,7 +59,7 @@
 |-------|-------|--------|
 | Repeated hardcoded localhost fallbacks | 9 frontend components | Code duplication, harder to maintain |
 | Inconsistent /api suffix in groq.ts | `elas-erp/frontend/app/lib/groq.ts` | Line 3 | Inconsistent with other files |
-| Hardcoded "Elas ERP Backend" | `elas-erp/backend/app/main.py` | Line 16 | Old branding in responses |
+| Hardcoded "VizPilot Backend" | `elas-erp/backend/app/main.py` | Line 16 | Old branding in responses |
 
 ### Documentation Issues
 | Issue | Files | Impact |

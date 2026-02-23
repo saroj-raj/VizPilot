@@ -102,7 +102,7 @@
   - ✅ Line number where to add (after line 13)
   - ✅ Exact code snippet provided
 
-- ⚠️ **BRANDING:** elas-erp/backend/app/main.py Line 16 - Hardcoded "Elas ERP Backend"
+- ⚠️ **BRANDING:** elas-erp/backend/app/main.py Line 16 - Hardcoded "VizPilot Backend"
   - ✅ File path provided
   - ✅ Line number provided
   - ✅ Reason (old branding)

@@ -1,11 +1,6 @@
--- Elas ERP Multi-Tenant Database Schema
--- Run this in Supabase SQL Editor
 
--- Enable UUID extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
--- =====================================================
--- BUSINESSES TABLE
+-- VizPilot Multi-Tenant Database Schema
 -- =====================================================
 CREATE TABLE IF NOT EXISTS public.businesses (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),

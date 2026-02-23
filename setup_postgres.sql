@@ -1,5 +1,5 @@
 -- ============================================================
--- ELAS ERP - PostgreSQL Database Setup Script
+-- VIZPILOT - PostgreSQL Database Setup Script
 -- ============================================================
 -- Run this script as postgres superuser:
 --   psql -U postgres -f setup_postgres.sql

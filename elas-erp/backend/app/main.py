@@ -14,7 +14,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "service": "Elas ERP Backend", "version": "2.0"}
+    return {"status": "ok", "service": settings.app_name, "version": "2.0"}
 
 @app.get("/version")
 def version():

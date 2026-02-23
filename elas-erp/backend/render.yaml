@@ -11,7 +11,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: APP_NAME
-        value: Elas ERP
+        value: VizPilot
       - key: APP_ENV
         value: production
       - key: DEBUG
@@ -31,9 +31,9 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: CORS_ORIGINS
-        value: https://elas-erp.vercel.app,http://localhost:4000
+        value: https://vizpilot.vercel.app,http://localhost:4000
       - key: FRONTEND_URL
-        value: https://elas-erp.vercel.app
+        value: https://vizpilot.vercel.app
       - key: MAX_UPLOAD_SIZE_MB
         value: 50
       - key: ALLOWED_FILE_TYPES

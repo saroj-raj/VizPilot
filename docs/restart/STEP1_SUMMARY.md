@@ -114,7 +114,7 @@ SUPABASE_ANON_KEY                   → SUPABASE_ANON_KEY ✓ (OK)
 ```
 🔴 elas-erp/backend/app/main.py
    - Line 11: allow_origins=["*"]      (FIX: use settings.frontend_url)
-   - Line 16: "Elas ERP Backend"       (UPDATE: use settings.app_name)
+   - Line 16: "VizPilot Backend"       (UPDATE: use settings.app_name)
 
 🔴 elas-erp/backend/app/services/invitation_service.py
    - Line 114: f"http://localhost:4000/invite/{token}"  (FIX: use settings.frontend_url)

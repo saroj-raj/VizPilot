@@ -1,4 +1,4 @@
-# 📊 Elas ERP - Complete Project Status Report
+# 📊 VizPilot - Complete Project Status Report
 
 **Generated:** November 11, 2025  
 **Version:** 2.0  
@@ -10,7 +10,7 @@
 
 ## 🎯 Executive Summary
 
-Elas ERP is a **multi-tenant, AI-powered ERP platform** with role-based dashboards and secure authentication. The project is **~75% complete** with core functionality working in production.
+VizPilot is a **multi-tenant, AI-powered ERP platform** with role-based dashboards and secure authentication. The project is **~75% complete** with core functionality working in production.
 
 ### Current State
 - ✅ **Production Deployed** - Both frontend and backend live

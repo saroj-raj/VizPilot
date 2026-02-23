@@ -1,7 +1,7 @@
 # 🚀 Supabase Multi-Tenant Setup Guide
 
 ## Overview
-This guide will walk you through setting up Supabase authentication and database for the Elas ERP multi-tenant system.
+This guide will walk you through setting up Supabase authentication and database for the VizPilot multi-tenant system.
 
 ## Prerequisites
 - Supabase account (free tier works fine)
@@ -15,7 +15,7 @@ This guide will walk you through setting up Supabase authentication and database
 2. Click **"New Project"**
 3. Fill in:
    - **Organization**: Select or create one
-   - **Name**: `elas-erp` (or your preferred name)
+   - **Name**: `VizPilot` (or your preferred name)
    - **Database Password**: Generate a strong password (save it!)
    - **Region**: Choose closest to your users
 4. Click **"Create new project"** (takes ~2 minutes)

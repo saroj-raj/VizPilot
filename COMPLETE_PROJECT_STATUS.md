@@ -1,4 +1,4 @@
-# 📊 Elas ERP - Complete Project Status
+# 📊 VizPilot - Complete Project Status
 **Last Updated:** November 10, 2025  
 **Version:** 2.1.0  
 **Overall Completion:** 87%
@@ -7,7 +7,7 @@
 
 ## 🎯 Executive Summary
 
-**Elas ERP** is a modern, multi-tenant Enterprise Resource Planning system built with:
+**VizPilot** is a modern, multi-tenant Enterprise Resource Planning system built with:
 - **Frontend:** Next.js 14, React, TypeScript, Tailwind CSS
 - **Backend:** FastAPI (Python), DuckDB, Groq AI
 - **Database:** Supabase (PostgreSQL)

@@ -63,7 +63,7 @@
 | 9 Frontend pages | Consolidate | Multiple | Repeated localhost fallbacks |
 | elas-erp/backend/app/core/config.py | Add Field | 14-16 | Missing FRONTEND_URL |
 | elas-erp/backend/app/main.py | Fix CORS | 11 | Wildcard allow_origins |
-| elas-erp/backend/app/main.py | Fix health | 16 | Hardcoded "Elas ERP Backend" |
+| elas-erp/backend/app/main.py | Fix health | 16 | Hardcoded "VizPilot Backend" |
 | elas-erp/backend/app/services/invitation_service.py | Fix hardcoded URL | 114 | Breaks in production |
 | NEW: elas-erp/backend/app/core/validate_config.py | Create | New | Startup validation |
 

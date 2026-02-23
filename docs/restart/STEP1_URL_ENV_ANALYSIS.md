@@ -107,7 +107,7 @@ Standard: FRONTEND_URL env var
 
 **In config (backend/app/core/config.py)**
 ```
-Current: APP_NAME="Elas ERP Backend", APP_ENV, SUPABASE_URL, SUPABASE_ANON_KEY
+Current: APP_NAME="VizPilot Backend", APP_ENV, SUPABASE_URL, SUPABASE_ANON_KEY
 Standard: Same names (✅ already matches)
 ```
 
@@ -311,12 +311,12 @@ AUTH_MODE=live
 ### Backend Config & Hardcoded Names
 
 **File:** [elas-erp/backend/app/core/config.py](elas-erp/backend/app/core/config.py)
-- **Line 5:** `app_name: str = Field(default="Elas ERP Backend", alias="APP_NAME")`
+- **Line 5:** `app_name: str = Field(default="VizPilot Backend", alias="APP_NAME")`
 - **Issue:** Old branding "Elas ERP Backend" (should be "VizPilot Backend")
 - **Status:** ⚠️ NEEDS UPDATE - For branding consistency (not URL, but important)
 
 **File:** [elas-erp/backend/app/main.py](elas-erp/backend/app/main.py)
-- **Line 16:** `return {"status": "ok", "service": "Elas ERP Backend", "version": "2.0"}`
+- **Line 16:** `return {"status": "ok", "service": "VizPilot Backend", "version": "2.0"}`
 - **Issue:** Hardcoded "Elas ERP Backend" in health endpoint response
 - **Status:** ⚠️ SHOULD USE settings.app_name (already defined in config)
 

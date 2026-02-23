@@ -1,18 +1,18 @@
-# Elas ERP - AI-Powered Multi-Tenant ERP System
+# VizPilot - AI-Powered Multi-Tenant ERP System
 
 > A modern, multi-tenant ERP platform with AI-powered document analysis, role-based dashboards, and secure authentication.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://elas-erp.vercel.app)
-[![Backend](https://img.shields.io/badge/backend-deployed-success)](https://elas-erp.onrender.com/health)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://vizpilot.vercel.app)
+[![Backend](https://img.shields.io/badge/backend-deployed-success)](https://vizpilot.onrender.com/health)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ---
 
 ## 🚀 Live Application
 
-- **Frontend:** https://elas-erp.vercel.app
-- **Backend API:** https://elas-erp.onrender.com
-- **API Docs:** https://elas-erp.onrender.com/docs
+- **Frontend:** https://vizpilot.vercel.app
+- **Backend API:** https://vizpilot.onrender.com
+- **API Docs:** https://vizpilot.onrender.com/docs
 
 ---
 

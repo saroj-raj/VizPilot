@@ -1,4 +1,4 @@
-# 🚀 Quick Deployment - Elas ERP
+# 🚀 Quick Deployment - VizPilot
 
 ## ⚡ 5-Minute Deploy
 

@@ -173,7 +173,7 @@
 **Backend Code:**
 - elas-erp/backend/app/core/config.py line 5
   ```python
-  app_name: str = Field(default="Elas ERP Backend", ...)
+  app_name: str = Field(default="VizPilot Backend", ...)
   ```
   Health endpoint returns this in response
 
@@ -221,7 +221,7 @@ Invoke-WebRequest -Uri "http://localhost:8000/health" -UseBasicParsing | Select-
 
 **Expected Response:**
 ```json
-{"status":"ok","service":"VizPilot Backend","version":"2.0"}
+{"status":"ok","service":"Elas ERP Backend","version":"2.0"}
 ```
 
 **1.3 Test Version Endpoint (Local)**
@@ -231,7 +231,7 @@ Invoke-WebRequest -Uri "http://localhost:8000/version" -UseBasicParsing | Select
 
 **Expected Response:**
 ```json
-{"version":"2.0.0","app_name":"VizPilot Backend","environment":"dev"}
+{"version":"2.0.0","app_name":"Elas ERP Backend","environment":"dev"}
 ```
 
 **1.4 Test Production Health Check**

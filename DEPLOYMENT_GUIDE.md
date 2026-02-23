@@ -1,4 +1,4 @@
-# Elas ERP Deployment Guide
+# VizPilot Deployment Guide
 
 ## ✅ Prerequisites Completed
 - ✅ Code pushed to GitHub (latest commit: Phase C Frontend Integration)
@@ -53,14 +53,14 @@
 
    # Version check
    curl https://elas-api.onrender.com
-   # Should return: {"message":"Elas ERP API","version":"1.0.0"}
+   # Should return: {"message":"VizPilot API","version":"1.0.0"}
 
    # Auth endpoint check
    curl https://elas-api.onrender.com/api/auth/me
    # Should return: 401 Unauthorized (expected - not logged in)
    ```
 
-   ✅ **Backend URL:** `https://elas-api.onrender.com`
+   ✅ **Backend URL:** `https://vizpilot-api.onrender.com`
 
 ---
 
@@ -74,7 +74,7 @@
 
    ```env
    # Backend API
-   NEXT_PUBLIC_API_BASE=https://elas-api.onrender.com
+   NEXT_PUBLIC_API_BASE=https://vizpilot-api.onrender.com
 
    # Supabase (CRITICAL - Required for authentication)
    NEXT_PUBLIC_SUPABASE_URL=https://nkohcnqkjjsjludqmkjz.supabase.co

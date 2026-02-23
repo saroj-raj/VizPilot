@@ -41,7 +41,7 @@ You asked for an analysis to make URLs and environment variables consistent acro
 ### Code Quality Issues ⚠️
 - **9 repeated hardcoded localhost fallbacks** (code duplication)
 - **Inconsistent /api suffix** in one file (groq.ts)
-- **Hardcoded "Elas ERP Backend" string** (old branding)
+- **Hardcoded "VizPilot Backend" string** (old branding)
 
 ### Documentation Issues 📝
 - **.env.example files** reference old URLs and lack documentation

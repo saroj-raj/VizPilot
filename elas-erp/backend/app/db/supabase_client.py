@@ -1,5 +1,5 @@
 """
-Supabase client configuration for Elas ERP
+Supabase client configuration for VizPilot
 Handles authentication and database operations
 """
 import os

@@ -46,7 +46,7 @@
 │  🔴 app/main.py                                    │
 │     Line 11: allow_origins = ["*"]                 │
 │             [HARDCODED WILDCARD - SECURITY RISK]   │
-│     Line 16: "service": "Elas ERP Backend"         │
+│     Line 16: "service": "VizPilot Backend"         │
 │             [HARDCODED STRING]                     │
 │                                                     │
 │  🔴 app/services/invitation_service.py             │
@@ -192,7 +192,7 @@ FRONTEND (.env.local):
 BACKEND (hardcoded):
   Invitations: http://localhost:4000  ❌ HARDCODED
   CORS: ["*"]  ❌ HARDCODED
-  Health: "Elas ERP Backend"  ❌ HARDCODED
+  Health: "VizPilot Backend"  ❌ HARDCODED
 ```
 
 ### After Step 1
@@ -277,7 +277,7 @@ BACKEND (uses env vars):
 1 FILE (3 FIXES):
 ├─ app/main.py
 │  ├─ Line 11: allow_origins=["*"] → allow_origins=[settings.frontend_url]
-│  ├─ Line 16: "service": "Elas ERP Backend" → "service": settings.app_name
+│  ├─ Line 16: "service": "VizPilot Backend" → "service": settings.app_name
 │  └─ Top: Add validation import and call
 
 1 FILE (1 FIX):

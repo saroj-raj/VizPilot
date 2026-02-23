@@ -167,11 +167,11 @@ APP_ENV=production
    - Watch the logs for any errors
 
 6. **Get your backend URL**
-   - Once deployed, copy the URL (e.g., `https://elas-api.onrender.com`)
+   - Once deployed, copy the URL (e.g., `https://vizpilot-api.onrender.com`)
    - Test health check:
      ```bash
      curl https://elas-api.onrender.com/health
-     # Should return: {"status":"ok","service":"Elas ERP Backend","version":"2.0"}
+   # Should return: {"status":"ok","service":"VizPilot Backend","version":"2.0"}
      
      curl https://elas-api.onrender.com/version
      # Should return: {"version":"2.0","env":"production"}
@@ -243,20 +243,20 @@ Now that you have your Vercel URL, update the backend to allow requests from it:
 
 1. **Test backend health**
    ```bash
-   curl -s https://elas-api.onrender.com/health
-   # Expected: {"status":"ok","service":"Elas ERP Backend","version":"2.0"}
+   curl -s https://vizpilot-api.onrender.com/health
+   # Expected: {"status":"ok","service":"VizPilot Backend","version":"2.0"}
    ```
 
 2. **Test CORS preflight**
-   ```bash
-   curl -i -X OPTIONS https://elas-api.onrender.com/api/upload \
-     -H "Origin: https://elas-erp-xxx.vercel.app" \
-     -H "Access-Control-Request-Method: POST"
-   # Expected: Access-Control-Allow-Origin header present
-   ```
+    ```bash
+    curl -i -X OPTIONS https://vizpilot-api.onrender.com/api/upload \
+       -H "Origin: https://vizpilot-xxx.vercel.app" \
+       -H "Access-Control-Request-Method: POST"
+    # Expected: Access-Control-Allow-Origin header present
+    ```
 
 3. **Test frontend**
-   - Open your Vercel URL: `https://elas-erp-xxx.vercel.app`
+   - Open your Vercel URL: `https://vizpilot-xxx.vercel.app`
    - Should see the landing page
    - Click "Login" - should load (even if no users yet)
    - Try the onboarding flow

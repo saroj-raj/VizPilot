@@ -310,7 +310,7 @@
 **10. Documentation Branding Mismatch**
 - **Impact**: LOW - Confusing but not functional
 - **Evidence**: Some docs say "Elas ERP", frontend says "VizPilot"
-- **Files affected**: `elas-erp/backend/app/main.py` line 6 still says "VizPilot Backend"
+- **Files affected**: `elas-erp/backend/app/main.py` line 6 still says "Elas ERP Backend"
 - **Fix**: Global search/replace in backend config
 
 ---

@@ -5,9 +5,7 @@ import { useRouter } from 'next/navigation';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
 import FileDropzone from '../../components/FileDropzone';
-import dynamic from 'next/dynamic';
-
-const VegaLite = dynamic(() => import('react-vega').then(m => m.VegaLite), { ssr: false });
+import VegaLiteWrapper from '@/components/VegaLiteWrapper';
 
 type SimpleFile = { name: string; sizeKB: number; file?: File };
 type Widget = { title: string; explanation?: string; vega_spec: any; role?: string };
@@ -156,8 +154,7 @@ export default function DocumentUpload() {
                   <div key={idx} className="bg-white rounded-lg border p-3">
                     <div className="font-semibold mb-2">{w.title}</div>
                     <div className="text-xs text-gray-500 mb-2">{w.explanation}</div>
-                    {/* @ts-ignore */}
-                    <VegaLite spec={w.vega_spec} data={{ preview }} actions={false} />
+                    <VegaLiteWrapper spec={w.vega_spec} data={{ preview }} actions={false} />
                   </div>
                 ))}
               </div>

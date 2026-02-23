@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Elas ERP Development Server Launcher
+VizPilot Development Server Launcher
 Starts both backend (FastAPI) and frontend (Next.js) servers for local development
 """
 
@@ -122,7 +122,7 @@ def start_frontend():
 
 def main():
     print_colored("\n" + "="*60, Colors.HEADER)
-    print_colored("    🏢 ELAS ERP - Development Server", Colors.HEADER + Colors.BOLD)
+    print_colored("    🚀 VIZPILOT - Development Server", Colors.HEADER + Colors.BOLD)
     print_colored("="*60 + "\n", Colors.HEADER)
     
     # Check prerequisites
