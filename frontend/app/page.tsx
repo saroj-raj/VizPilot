@@ -23,7 +23,7 @@ export default function Home() {
                 <span className="text-white font-bold text-xl">V</span>
               </div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Vizpilot
+                VizPilot
               </h1>
             </div>
             <nav className="flex space-x-6">
@@ -167,7 +167,7 @@ export default function Home() {
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-xl p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
           <p className="text-xl mb-8 opacity-90">
-            Join hundreds of companies using Elas ERP to streamline their operations
+            Join hundreds of companies using VizPilot to streamline their operations
           </p>
           <div className="flex justify-center space-x-4">
             <Link
@@ -190,7 +190,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-white mt-16 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400">
-            © 2025 Elas ERP. All rights reserved. | Built with Next.js & FastAPI
+            © 2025 VizPilot. All rights reserved. | Built with Next.js & FastAPI
           </p>
         </div>
       </footer>

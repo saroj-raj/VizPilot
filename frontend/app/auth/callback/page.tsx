@@ -17,10 +17,12 @@ export default function AuthCallbackPage() {
         // `getSessionFromUrl` will parse the access token in the URL and store the session.
         // If your supabase client version exposes a different helper, adapt accordingly.
         if (typeof supabase.auth.getSessionFromUrl === "function") {
-          const { data, error } = await supabase.auth.getSessionFromUrl();
+          // Ensure session is saved to local storage
+          const { data, error } = await supabase.auth.getSessionFromUrl({ storeSession: true });
           if (error) throw error;
-          // If session present, redirect to dashboard or homepage
-          router.replace("/");
+          console.log('Auth callback: session stored', data?.session);
+          // Redirect to a sensible post-login page
+          router.replace('/dashboard/admin');
           return;
         }
 

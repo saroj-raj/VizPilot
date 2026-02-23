@@ -200,8 +200,8 @@ export default function DocumentsPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center gap-2">
-              <Image src="/logo.svg" alt="Elas ERP" width={40} height={40} />
-              <span className="text-xl font-bold text-gray-900">Elas ERP</span>
+              <Image src="/logo.svg" alt="VizPilot" width={40} height={40} />
+              <span className="text-xl font-bold text-gray-900">VizPilot</span>
             </div>
             <div className="flex gap-2">
               <span className="text-sm text-gray-500">Step 4 of 4</span>

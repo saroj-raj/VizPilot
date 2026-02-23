@@ -3,8 +3,8 @@ import { AuthProvider } from '../contexts/AuthContext';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
-  title: 'Elas ERP - Enterprise Resource Planning',
-  description: 'Modern ERP solution for your business',
+  title: 'VizPilot - AI Data Intelligence Platform',
+  description: 'Intelligent data analysis and visualization for business insights',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

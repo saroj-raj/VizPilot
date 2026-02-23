@@ -76,7 +76,7 @@ export default function UploadPage() {
       return;
     }
 
-    // Call API directly from upload page
+      // Call API directly from upload page
     try {
       setIsUploading(true);
       
@@ -89,6 +89,13 @@ export default function UploadPage() {
 
       console.log('📤 Uploading files to API...');
       const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
+
+      // If apiBase defaults to localhost but we are not running on localhost,
+      // warn the user instead of attempting a failing network call.
+      if (apiBase.includes('localhost') && typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
+        throw new Error(`CONFIG: NEXT_PUBLIC_API_BASE is not set and default ${apiBase} is unreachable from this environment. Set NEXT_PUBLIC_API_BASE to your backend URL.`);
+      }
+
       const response = await fetch(`${apiBase}/api/upload`, {
         method: 'POST',
         body: formData,
@@ -126,8 +133,8 @@ export default function UploadPage() {
         const errMsg = err.message.toLowerCase();
         const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:8000';
         
-        if (errMsg.includes('networkerror') || errMsg.includes('failed to fetch')) {
-          errorMessage += `Cannot reach the server at ${apiBase}. Please check your connection.`;
+        if (errMsg.includes('config:') || (errMsg.includes('networkerror') || errMsg.includes('failed to fetch'))) {
+          errorMessage += `Cannot reach the server at ${apiBase}. If you're deployed, set NEXT_PUBLIC_API_BASE to your backend URL; if developing locally, ensure the backend is running at ${apiBase}.`;
         } else if (errMsg.includes('unsupported file type')) {
           errorMessage += 'One or more files have an unsupported format. Please use CSV, Excel, PDF, or Word files.';
         } else if (errMsg.includes('parse') || errMsg.includes('parsing')) {
@@ -169,7 +176,7 @@ export default function UploadPage() {
               <span className="text-white font-bold text-xl">E</span>
             </div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Elas ERP
+              VizPilot
             </h1>
           </Link>
         </div>

@@ -201,7 +201,7 @@ export default function RoleDashboard() {
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-xl">E</span>
                 </div>
-                <h1 className="text-xl font-bold text-gray-900">Elas ERP</h1>
+                <h1 className="text-xl font-bold text-gray-900">VizPilot</h1>
               </Link>
               <span className="text-gray-400">|</span>
               <div className="flex items-center space-x-2">
